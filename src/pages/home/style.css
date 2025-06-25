@@ -15,15 +15,16 @@ form {
     flex-direction: column;
     gap: 30px;
     padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.288);
     border-radius: 10px;
-    background-color: #2E2D4E;
+    background: linear-gradient(rgb(83, 185, 253), rgb(34, 32, 158));
     max-width: 50%;
     width: 400px;
     margin-bottom: 20px;
 
     & button {
         border-radius: 30px;
-        background-color: rgb(144, 105, 218);
+        background-color: rgb(20, 21, 90);
         height: 40px;
         border: none;
         font-weight: bolder;
@@ -37,11 +38,11 @@ form {
     }
 
     & input {
-        border: 1px solid rgb(64, 21, 94);
+        border: 1px solid rgb(105, 172, 226);
         border-radius: 30px;
         height: 40px;
-        background-color: rgb(56, 29, 92);
-        color: white;
+        background-color: rgb(37, 74, 131);
+        color: rgb(255, 255, 255);
         font-size: 16px;
         padding-left: 10px;
         outline: none;
@@ -51,12 +52,14 @@ form {
 .card {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(81, 32, 100);
+    background: linear-gradient(rgb(77, 169, 231), rgb(72, 70, 240));
+    border: 1px solid rgba(255, 255, 255, 0.288);
     margin: 10px;
     padding: 10px;
     width: 400px;
     border-radius: 10px;
     font-size: 20px;
+    text-align: left;
 
     & p {
         color: white;
@@ -67,4 +70,20 @@ form {
             font-style: italic;
         }
     }
+
+    & button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        & img {
+            width: 30px;
+        }
+    }
+
+    & button:hover {
+        opacity: 0.5;
+    }
+
+
 }
