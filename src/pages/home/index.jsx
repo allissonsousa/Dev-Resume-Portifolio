@@ -23,6 +23,12 @@ function Home() {
     name: 'Marcela',
     age: 35,
     email: 'marcela23@gmail.com'
+  },
+  {
+    id: '23123h12h232321as1',
+    name: 'Maria Laura',
+    age: 18,
+    email: 'marcela23@gmail.com'
   }
   ]
   return (
