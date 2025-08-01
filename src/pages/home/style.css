@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Lobster&family=Playwrite+CA:wght@100..400&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    ---cor1: rgb(48, 43, 43);
+    ---cor2: rgb(46, 46, 46);
+    ---cor3: white;
+    ---cor4: rgb(199, 120, 221);
+    ---font1: "Fira Code", monospace;
+}
+
+/*altera a cor somente das hashtags # no texto do site*/
+span {
+    color: var(---cor4);
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    color: var(---cor3);
+    display: flex;
+    background-color: var(---cor2);
+    justify-content: center;
+    font-size: 10pt;
+    font-family: var(---font1);
+    overflow: scroll;
+
+}
+
+#root::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+#root::-webkit-scrollbar-corner {
+    visibility: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    position: fixed;
+    height: 80px;
+    position: fixed;
+    background-color: var(---cor1);
+
+    & #navegacao {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 30vw;
+    }
+}
+
+main {
+    width: 80vw;
+    height: 100vh;
+    background-color: var(---cor1);
+    justify-content: center;
+    margin-top: 80px;
+}

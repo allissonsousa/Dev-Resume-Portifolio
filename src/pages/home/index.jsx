@@ -1,27 +1,26 @@
 import { useState, useEffect } from "react";
 import "./style.css";
-import discord from "./assets/discord.png";
 
 function navegacao() {
   return (
-    <header>
-      <p>Allisson Sousa</p>
-      <ul>
-        <li>#home</li>
-        <li>#trabalhos</li>
-        <li>#sobre mim</li>
-        <li>#contate</li>
-      </ul>
+    <header id="cabeçalho">
+      <div>Allisson</div>
+      <div id="navegacao">
+        <div><span>#</span>home</div>
+        <div><span>#</span>trabalhos</div>
+        <div><span>#</span>sobre</div>
+        <div><span>#</span>contate-me</div>
+      </div>
     </header>
   );
 }
 
 function exibeprojeto() {
   const projetos = [
-    { id: 1, nome: "python", simbolo: discord },
-    { id: 2, nome: "java", simbolo: "./assets/java.jpg" },
-    { id: 3, nome: "web", simbolo: "./assets/java.jpg" },
-    { id: 4, nome: "react", simbolo: "./assets/java.jpg" },
+    { id: 1, nome: "python" },
+    { id: 2, nome: "java" },
+    { id: 3, nome: "web" },
+    { id: 4, nome: "react" },
   ];
   return (
     <div style={{ display: "flex", flexdirection: "row" }}>
@@ -39,18 +38,27 @@ function exibeprojeto() {
 function Home() {
   const home = useState(false);
   return (
-    <body>
+    <div id="corpo">
+      {navegacao()}
       <main>
-        {navegacao()}
-      <aside>nome e foto</aside>
-      <p></p>
-      {exibeprojeto()}
-      <article>skills</article>
-      <article>about</article>
-      <article>contact</article>
+        <aside>
+          <h1>Sou Allisson e estou em busca de aprender</h1>
+          <p>"Criatividade e inovação sempre andam de mãos dadas"</p>
+          <div id="contateme">Contate-me!!</div>
+          <article>
+            <img width={"200px"} height={"200px"} src="/assets/simbol.png" alt="simbolo" />
+            <img width={"200px"} height={"200px"} src="/assets/mail.png" alt="perfil" />
+            <img width={"200px"} height={"200px"} src="/assets/pontos.png" alt="pontos" />
+            <p id="workingon"><span>#</span>Atualmente -- estudando JAVA</p>
+          </article>
+        </aside>
+        {exibeprojeto()}
+        <article><span>#</span>skills</article>
+        <article><span>#</span>about</article>
+        <article><span>#</span>contact</article>
       </main>
       <footer></footer>
-    </body>
+    </div>
   );
 }
 export default Home;
