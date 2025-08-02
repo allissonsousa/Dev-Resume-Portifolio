@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 
+
 function navegacao() {
   return (
     <header id="cabeçalho">
-      <div>Allisson</div>
+      <div><img src="/src/assets/selecao.png" alt="simbolo" />Allisson</div>
       <div id="navegacao">
         <div><span>#</span>home</div>
         <div><span>#</span>trabalhos</div>
@@ -40,17 +41,29 @@ function Home() {
   return (
     <div id="corpo">
       {navegacao()}
+      <div className="contatosfixo">
+        <img id="linha" src="src/assets/linha.png" alt="linha" />
+        <a href=""><img src="src/assets/discordia.png" alt="discord" /></a>
+        <a href=""><img src="src/assets/github.png" alt="github" /></a>
+        <a href=""><img src="src/assets/mail.png" alt="e-mail" /></a>
+      </div>
       <main>
-        <aside>
-          <h1>Sou Allisson e estou em busca de aprender</h1>
-          <p>"Criatividade e inovação sempre andam de mãos dadas"</p>
-          <div id="contateme">Contate-me!!</div>
-          <article>
-            <img width={"200px"} height={"200px"} src="/assets/simbol.png" alt="simbolo" />
-            <img width={"200px"} height={"200px"} src="/assets/mail.png" alt="perfil" />
-            <img width={"200px"} height={"200px"} src="/assets/pontos.png" alt="pontos" />
-            <p id="workingon"><span>#</span>Atualmente -- estudando JAVA</p>
+        <aside className="sobremim">
+          <article className="resumo">
+            <h1>Sou um desenvolvedor <span>full stack</span> <br />dando <span>os primeiros passos</span> no mercado</h1>
+            <p id="efeito">"Criatividade e inovação sempre andam de mãos dadas"</p>
+            <div id="contateme">Contate-me!!</div>
           </article>
+          <article className="usuario">
+            <img id="simbolofoto" src="/src/assets/simbol.png" alt="simbolo" />
+            <img id="foto" src="/src/assets/perfil.png" alt="perfil" />
+            <p id="workingon"><span>#</span>Atualmente -- estudando JAVA</p>
+            <img id="pontofoto" src="/src/assets/malha.png" alt="pontos" />
+          </article>
+        </aside>
+        <aside className="slogan">
+          <h2>"A evolução não é instantânea, mas inevitável quando há curiosidade e persistência."</h2>
+          <p>— Carl Sagan</p>
         </aside>
         {exibeprojeto()}
         <article><span>#</span>skills</article>

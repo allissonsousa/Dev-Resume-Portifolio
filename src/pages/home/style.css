@@ -9,9 +9,10 @@
 
 :root {
     ---cor1: rgb(48, 43, 43);
-    ---cor2: rgb(46, 46, 46);
+    ---cor2: rgb(48, 43, 43);
     ---cor3: white;
     ---cor4: rgb(199, 120, 221);
+    ---cor5: #ABB2BF;
     ---font1: "Fira Code", monospace;
 }
 
@@ -30,7 +31,8 @@ span {
     font-size: 10pt;
     font-family: var(---font1);
     overflow: scroll;
-
+    font-weight: lighter;
+    line-height: 20pt;
 }
 
 #root::-webkit-scrollbar {
@@ -51,19 +53,141 @@ header {
     height: 80px;
     position: fixed;
     background-color: var(---cor1);
+    z-index: 2;
 
     & #navegacao {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 30vw;
+        z-index: 2;
+    }
+
+    & img {
+        width: 20px;
     }
 }
 
+#navegacao>div:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*icones fixos na lateral para acessar minhas redes sociais*/
+.contatosfixo {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    left: 40px;
+
+    & a>img {
+        width: 20px;
+        margin: 4px;
+    }
+
+    & a>img:hover {
+        transform: scale(1.2);
+    }
+}
+
+#linha {
+    width: 27px;
+    height: 130px;
+
+}
+
+/*parte principal do corpo*/
 main {
     width: 80vw;
     height: 100vh;
     background-color: var(---cor1);
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 120px;
+}
+
+/*descrição resumida sobremim*/
+.sobremim {
+    width: 80vw;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.resumo {
+    font-size: 20pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 150px;
+    transform: translateY(100px);
+}
+
+#efeito {
+    font-weight: lighter;
+    font-size: 10pt;
+}
+
+#contateme {
+    border: 1px solid var(---cor4);
+    width: fit-content;
+    padding: 2px;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+#contateme:hover {
+    background-color: var(---cor4);
+
+}
+
+/*parte com foto e imagens flutuantes*/
+.usuario {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-100px);
+}
+
+#workingon {
+    border: 1px solid var(---cor4);
+    width: max;
+    padding: 2px;
+    margin-left: 100px;
+}
+
+#simbolofoto {
+    transform: translateY(120px);
+    width: 150px;
+    margin-left: 90px;
+}
+
+#foto {
+    width: 300px;
+    z-index: 1;
+    margin-left: 100px;
+    transform: rotateY(180deg);
+}
+
+#pontofoto {
+    align-self: self-end;
+    transform: translateY(-140px);
+    z-index: 1;
+    width: 100px;
+}
+
+.slogan {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    font-size: 10pt;
+    align-self: center;
+
+    & h2,
+    p {
+        border: 1px solid var(---cor5);
+        padding: 10px;
+        width: fit-content;
+    }
+
 }
