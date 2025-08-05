@@ -105,6 +105,7 @@ function Home() {
               <img src="src/assets/pontos.png" alt="pontos" />
               <img src="src/assets/perfil.png" alt="perfil" />
               <img src="src/assets/pontos.png" alt="pontos" />
+              <img src="src/assets/linha.png" alt="linha" />
             </div>
         </article>
         <article ref={sectionRef.contact}>
@@ -121,7 +122,14 @@ function Home() {
           </div>
         </article>
       </main>
-      <footer>© 2025 Allisson Sousa</footer>
+      <footer>
+        <div>
+          <p>Aks AI</p>
+          <input type="text" />
+        </div>
+        <div id="AiResponse"></div>
+        <p>© 2025 Allisson Sousa</p>
+      </footer>
     </div>
   );
 }
