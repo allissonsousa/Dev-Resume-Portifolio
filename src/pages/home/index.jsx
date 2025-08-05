@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef} from "react";
 import "./style.css";
 
 
@@ -7,15 +7,27 @@ function navegacao() {
     <header id="cabeçalho">
       <div><img src="/src/assets/selecao.png" alt="simbolo" />Allisson</div>
       <div id="navegacao">
-        <div><span>#</span>home</div>
-        <div><span>#</span>trabalhos</div>
-        <div><span>#</span>sobre</div>
-        <div><span>#</span>contate-me</div>
+        <div onclick="scrollToSection.home"><span>#</span>home</div>
+        <div onclick="scrollToSection.projects"><span>#</span>trabalhos</div>
+        <div onclick="scrollToSection.skills"><span>#</span>skills</div>
+        <div onclick="scrollToSection.about"><span>#</span>sobre</div>
+        <div onclick="scrollToSection.contact"><span>#</span>contate-me</div>
       </div>
     </header>
   );
 }
-
+function rollto(){
+  const sectiosnRef = {
+    home: useRef(null),
+    projects: useRef(null),
+    about: useRef(null),
+    contact: useRef(null),
+    skills: useRef(null)
+  }
+  const scrollToSection = () =>{
+    sectionRef[section]?.current?.scrollItoView({behavior: "smooth"});
+  }
+}
 function exibeprojeto() {
   const projetos = [
     { id: 1, imagem: "src/assets/analise-de-dados.jpg", nome: "Saúde Quest", content: "Análise de dados com python usando dados do sistema único de saúde", tags: "Python Pandas AI SQL Excel" },
@@ -44,12 +56,12 @@ function Home() {
       {navegacao()}
       <div className="contatosfixo">
         <img id="linha" src="src/assets/linha.png" alt="linha" />
-        <a href=""><img src="src/assets/discordia.png" alt="discord" /></a>
-        <a href=""><img src="src/assets/github.png" alt="github" /></a>
-        <a href=""><img src="src/assets/mail.png" alt="e-mail" /></a>
+        <a href="" target="_blank"><img src="src/assets/discordia.png" alt="discord" /></a>
+        <a href="https://github.com/allissonsousa" target="_blank"><img src="src/assets/github.png" alt="github" /></a>
+        <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src="src/assets/mail.png" alt="e-mail" /></a>
       </div>
       <main>
-        <aside className="sobremim">
+        <aside className="sobremim" ref={sectionRef.home}>
           <article className="resumo">
             <h1>Sou um desenvolvedor <span>full stack</span> <br />dando <span>os primeiros passos</span> no mercado</h1>
             <p id="efeito">"Criatividade e inovação sempre andam de mãos dadas"</p>
@@ -70,22 +82,30 @@ function Home() {
           </div>
           <img src="/src/assets/aspas.png" alt="aspas" />
         </aside>
-        <article>
+        <article ref={sectionRef.projects}>
           <h1 className="titulos"><span>#</span>projects <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
           {exibeprojeto()}
         </article>
-        <article>
+        <article ref={sectionRef.skills}>
           <h1 className="titulos"><span>#</span>skills <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
         </article>
-        <article>
+        <article ref={sectionRef.about}>
           <h1 className="titulos"><span>#</span>about-me <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+          <p>Sou um programador em início de carreira com sólida base em linguagens como Python, Java e SQL, além de experiência prática com desenvolvimento
+             web utilizando HTML, CSS e React. Já desenvolvi projetos pessoais e acadêmicos que envolvem desde criação de interfaces responsivas até manipulação
+              de dados em bancos relacionais. Tenho facilidade para aprender novas tecnologias, foco em entregar código limpo e estou sempre buscando soluções práticas 
+              para os desafios que surgem.</p>
+          <p>Atualmente estou disponível para trabalhos freelance e me coloco à disposição para colaborar em projetos de desenvolvimento web, automações,
+             integrações com banco de dados e outras demandas de programação. Se você procura alguém comprometido, comunicativo e com vontade de crescer 
+             junto com o projeto, será um prazer contribuir. Para mais informações ou para conversarmos sobre possíveis parcerias, estou à disposição para 
+             contato.</p>
         </article>
-        <article>
+        <article ref={sectionRef.contact}>
           <h1 className="titulos"><span>#</span>contacts <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
         </article>
 
       </main>
-      <footer></footer>
+      <footer>© 2025 Allisson Sousa</footer>
     </div>
   );
 }
