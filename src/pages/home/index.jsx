@@ -90,6 +90,7 @@ function Home() {
           <h1 className="titulos"><span>#</span>skills <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
         </article>
         <article ref={sectionRef.about}>
+          <div>
           <h1 className="titulos"><span>#</span>about-me <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
           <p>Sou um programador em início de carreira com sólida base em linguagens como Python, Java e SQL, além de experiência prática com desenvolvimento
              web utilizando HTML, CSS e React. Já desenvolvi projetos pessoais e acadêmicos que envolvem desde criação de interfaces responsivas até manipulação
@@ -99,11 +100,26 @@ function Home() {
              integrações com banco de dados e outras demandas de programação. Se você procura alguém comprometido, comunicativo e com vontade de crescer 
              junto com o projeto, será um prazer contribuir. Para mais informações ou para conversarmos sobre possíveis parcerias, estou à disposição para 
              contato.</p>
+            </div>
+            <div>
+              <img src="src/assets/pontos.png" alt="pontos" />
+              <img src="src/assets/perfil.png" alt="perfil" />
+              <img src="src/assets/pontos.png" alt="pontos" />
+            </div>
         </article>
         <article ref={sectionRef.contact}>
           <h1 className="titulos"><span>#</span>contacts <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+          <div>
+          <p>Estou aberto a novas oportunidades como programador, sejam projetos pontuais ou posições efetivas.</p>
+          <p>Sinta-se à vontade para me contatar ou conhecer mais através das minhas redes sociais.</p>
+          </div>
+          <div>
+            <p>Me envie uma mensagem!!</p>
+            <a href="https://www.linkedin.com/in/allisson-sousa-7b8b1b1b1/" target="_blank"><img src="src/assets/linkedin.png" alt="linkedin" /></a>
+            <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src="src/assets/mail.png" alt="mail" /></a>
+            <a href="" target="_blank"><img src="src/assets/discordia.png" alt="discord" /></a>
+          </div>
         </article>
-
       </main>
       <footer>© 2025 Allisson Sousa</footer>
     </div>
