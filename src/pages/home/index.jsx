@@ -18,17 +18,18 @@ function navegacao() {
 
 function exibeprojeto() {
   const projetos = [
-    { id: 1, nome: "python" },
-    { id: 2, nome: "java" },
-    { id: 3, nome: "web" },
-    { id: 4, nome: "react" },
+    { id: 1, imagem: "src/assets/analise-de-dados.jpg", nome: "Saúde Quest", content: "Análise de dados com python usando dados do sistema único de saúde", tags: "Python Pandas AI SQL Excel" },
+    { id: 2, imagem: "src/assets/dados-financeiros.jpg", nome: "Finance View", content: "Criação de um acompanhador de valores da bolsa atual com Cruds em Java", tags: "JAVA Springboot Spring SQL Docker" },
+    { id: 3, imagem: "src/assets/speed.png", nome: "Speed Timer", content: "Cronometro para cubo mágico com métricas ", tags: "HTML CSS JavaScript " }
   ];
   return (
-    <div style={{ display: "flex", flexdirection: "row" }}>
+    <div className="projetos">
       {projetos.map((projeto) => (
-        <div key={projeto.id}>
-          <p>{projeto.nome}</p>
-          <img src={projeto.simbolo} style={{ width: "200px" }} />
+        <div className="projeto" key={projeto.id}>
+          <img src={projeto.imagem} />
+          <tag>{projeto.tags}</tag>
+          <h2>{projeto.nome}</h2>
+          <p>{projeto.content}</p>
         </div>
       ))}
     </div>
@@ -62,13 +63,27 @@ function Home() {
           </article>
         </aside>
         <aside className="slogan">
-          <h2>"A evolução não é instantânea, mas inevitável quando há curiosidade e persistência."</h2>
-          <p>— Carl Sagan</p>
+          <img className="aspasinvertido rodaraspas" src="/src/assets/aspas.png" alt="aspas" />
+          <div>
+            <p>"A evolução não é instantânea, mas inevitável quando há curiosidade e persistência."</p>
+            <p>— Carl Sagan</p>
+          </div>
+          <img src="/src/assets/aspas.png" alt="aspas" />
         </aside>
-        {exibeprojeto()}
-        <article><span>#</span>skills</article>
-        <article><span>#</span>about</article>
-        <article><span>#</span>contact</article>
+        <article>
+          <h1 className="titulos"><span>#</span>projects <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+          {exibeprojeto()}
+        </article>
+        <article>
+          <h1 className="titulos"><span>#</span>skills <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+        </article>
+        <article>
+          <h1 className="titulos"><span>#</span>about-me <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+        </article>
+        <article>
+          <h1 className="titulos"><span>#</span>contacts <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+        </article>
+
       </main>
       <footer></footer>
     </div>

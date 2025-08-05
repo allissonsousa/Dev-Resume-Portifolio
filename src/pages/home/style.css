@@ -11,7 +11,7 @@
     ---cor1: rgb(48, 43, 43);
     ---cor2: rgb(48, 43, 43);
     ---cor3: white;
-    ---cor4: rgb(199, 120, 221);
+    ---cor4: #c778dd;
     ---cor5: #ABB2BF;
     ---font1: "Fira Code", monospace;
 }
@@ -109,6 +109,7 @@ main {
 /*descrição resumida sobremim*/
 .sobremim {
     width: 80vw;
+    height: 600px;
     display: flex;
     align-content: space-between;
     justify-content: space-around;
@@ -138,7 +139,6 @@ main {
 
 #contateme:hover {
     background-color: var(---cor4);
-
 }
 
 /*parte com foto e imagens flutuantes*/
@@ -147,6 +147,7 @@ main {
     display: flex;
     flex-direction: column;
     transform: translateY(-100px);
+    height: fit-content;
 }
 
 #workingon {
@@ -179,15 +180,67 @@ main {
 .slogan {
     display: flex;
     flex-direction: column;
-    max-width: 700px;
-    font-size: 10pt;
-    align-self: center;
+    align-items: center;
+    width: 80vw;
+    line-height: 20pt;
+    font-size: 13pt;
+    font-weight: normal;
+    transform: translate(0, -130px);
 
-    & h2,
-    p {
+    & div {
+        width: 600px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: end;
+    }
+
+    & p {
         border: 1px solid var(---cor5);
-        padding: 10px;
+        padding: 13px;
         width: fit-content;
     }
 
+    & img {
+        width: 30px;
+        height: 30px;
+        transform: translate(260px, -68px);
+    }
+
+    & .aspasinvertido {
+        transform: translate(-260px, 15px);
+    }
+
+}
+
+.titulos {
+    font-size: 20pt;
+    font-weight: normal;
+
+    & img {
+        height: 20px;
+        width: 500px;
+    }
+}
+
+.projetos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.projeto {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.438);
+
+    & img {
+        width: 300px;
+    }
+
+    & img,
+    tag {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
 }
