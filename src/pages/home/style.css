@@ -250,3 +250,24 @@ main {
         padding: 3px;
     }
 }
+
+.habilidades {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80vw;
+
+    & div {
+        border: 1px solid white;
+        height: fit-content;
+
+    }
+
+    & img {
+        width: 350px;
+    }
+}
+
+.sobre {
+    display: flex;
+}

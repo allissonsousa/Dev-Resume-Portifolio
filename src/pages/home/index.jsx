@@ -31,12 +31,19 @@ function habilidades() {
     { id: 3, habilitty: "Ferramentas", tecnologia: "VSCode  Figma  Git  Excel  PowerBI  Pycharm  InteliJ" },
     { id: 4, habilitty: "Outros", tecnologia: "HTML  CSS  ADM" }
   ];
-  return { habilidades.map(habilidade) => (
-    <div>
-
+  return (
+    <div className="habilidades">
+      <img src="src/assets/skil.png" alt="skilsmold" />
+      <div>
+        {habilidades.map((habilidade) => (
+          <div>
+            <h4>{habilidade.habilitty}</h4>
+            <p>{habilidade.tecnologia}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
 }
 //funçao principal que exporta a pagina 
 function Home() {
@@ -99,8 +106,9 @@ function Home() {
         </article>
         <article ref={sectionsRef.About}>
           <h1 className="titulos"><span>#</span>skills <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+          {habilidades()}
         </article>
-        <article >
+        <article className="sobre">
           <div>
             <h1 className="titulos"><span>#</span>about-me <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
             <p>Sou um programador em início de carreira com sólida base em linguagens como Python, Java e SQL, além de experiência prática com desenvolvimento
