@@ -24,6 +24,20 @@ function exibeprojeto() {
   );
 }
 
+function habilidades() {
+  const habilidades = [
+    { id: 1, habilitty: "Linguagens", tecnologia: "Python  React  Java  JavaScript " },
+    { id: 2, habilitty: "Banco de Dados", tecnologia: "SQL Server  MySQL  MongoBD" },
+    { id: 3, habilitty: "Ferramentas", tecnologia: "VSCode  Figma  Git  Excel  PowerBI  Pycharm  InteliJ" },
+    { id: 4, habilitty: "Outros", tecnologia: "HTML  CSS  ADM" }
+  ];
+  return { habilidades.map(habilidade) => (
+    <div>
+
+    </div>
+  )
+}
+}
 //funçao principal que exporta a pagina 
 function Home() {
   const home = useState(false);
