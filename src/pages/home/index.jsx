@@ -6,8 +6,8 @@ import { useEffect } from "react";
 
 function exibeprojeto() {
   const projetos = [
-    { id: 1, imagem: "src/assets/analise-de-dados.jpg", nome: "Saúde Quest", content: "Análise de dados com python usando dados do sistema único de saúde", tags: "Python Pandas AI SQL Excel" },
-    { id: 2, imagem: "src/assets/dados-financeiros.jpg", nome: "Finance View", content: "Criação de um acompanhador de valores da bolsa atual com Cruds em Java", tags: "JAVA Springboot Spring SQL Docker" },
+    { id: 1, imagem: "src/assets/analisedados.png", nome: "Saúde Quest", content: "Análise de dados com python usando dados do sistema único de saúde", tags: "Python Pandas AI SQL Excel" },
+    { id: 2, imagem: "src/assets/dados-financeiros.jpeg", nome: "Finance View", content: "Criação de um acompanhador de valores da bolsa atual com Cruds em Java", tags: "JAVA Springboot Spring SQL Docker" },
     { id: 3, imagem: "src/assets/speed.png", nome: "Speed Timer", content: "Cronometro para cubo mágico com métricas ", tags: "HTML CSS JavaScript " }
   ];
   return (
