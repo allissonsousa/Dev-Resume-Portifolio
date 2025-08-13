@@ -257,17 +257,44 @@ main {
     justify-content: space-around;
     width: 80vw;
 
-    & div {
+
+    & aside {
         border: 1px solid white;
         height: fit-content;
-
+        width: 96px;
+        margin: 100px 5px;
+        padding: 3px;
     }
 
     & img {
-        width: 350px;
+        width: 320px;
+        height: 350px;
+        margin-top: 50px;
     }
+
+    & h4 {
+        border-bottom: 1px solid white;
+    }
+
+
+
+}
+
+.cast {
+    display: flex;
 }
 
 .sobre {
     display: flex;
+
+    & p {
+        height: 200px;
+        margin: 40px;
+    }
+
+}
+
+.perf {
+    width: 400px;
+    transform: translateY(50px);
 }

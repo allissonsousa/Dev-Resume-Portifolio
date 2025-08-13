@@ -34,12 +34,12 @@ function habilidades() {
   return (
     <div className="habilidades">
       <img src="src/assets/skil.png" alt="skilsmold" />
-      <div>
+      <div className="cast">
         {habilidades.map((habilidade) => (
-          <div>
+          <aside>
             <h4>{habilidade.habilitty}</h4>
             <p>{habilidade.tecnologia}</p>
-          </div>
+          </aside>
         ))}
       </div>
     </div>
@@ -104,12 +104,12 @@ function Home() {
           <h1 className="titulos"><span>#</span>projects <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
           {exibeprojeto()}
         </article>
-        <article ref={sectionsRef.About}>
+        <article >
           <h1 className="titulos"><span>#</span>skills <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
           {habilidades()}
         </article>
-        <article className="sobre">
-          <div>
+        <article ref={sectionsRef.About} className="sobre">
+          <div >
             <h1 className="titulos"><span>#</span>about-me <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
             <p>Sou um programador em início de carreira com sólida base em linguagens como Python, Java e SQL, além de experiência prática com desenvolvimento
               web utilizando HTML, CSS e React. Já desenvolvi projetos pessoais e acadêmicos que envolvem desde criação de interfaces responsivas até manipulação
@@ -120,14 +120,11 @@ function Home() {
               junto com o projeto, será um prazer contribuir. Para mais informações ou para conversarmos sobre possíveis parcerias, estou à disposição para
               contato.</p>
           </div>
-          <div ref={sectionsRef.Contact}>
-            <img src="src/assets/pontos.png" alt="pontos" />
-            <img src="src/assets/perfil.png" alt="perfil" />
-            <img src="src/assets/pontos.png" alt="pontos" />
-            <img src="src/assets/linha.png" alt="linha" />
+          <div >
+            <img className="perf" src="src/assets/aboutperfil.png" alt="pontos" />
           </div>
         </article>
-        <article >
+        <article ref={sectionsRef.Contact}>
           <h1 className="titulos"><span>#</span>contacts <span><img src="src/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
           <div>
             <p>Estou aberto a novas oportunidades como programador, sejam projetos pontuais ou posições efetivas.</p>
