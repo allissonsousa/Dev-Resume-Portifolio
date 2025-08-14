@@ -118,16 +118,16 @@ function Home() {
           <img ref={sectionsRef.Projects} src={aspas} alt="aspas" />
         </aside>
         <article ref={sectionsRef.Skills}>
-          <h1 className="titulos"><span>#</span>projects <span><img src={linha} alt="linha" /></span></h1>
+          <h1 className="titulos"><span>#</span>projects <span><img src={menoslinha} alt="menos" /></span></h1>
           {exibeprojeto()}
         </article>
         <article >
-          <h1 className="titulos"><span>#</span>skills <span><img src={linha} alt="linha" /></span></h1>
+          <h1 className="titulos"><span>#</span>skills <span><img src={menoslinha} alt="menos" /></span></h1>
           {habilidades()}
         </article>
         <article ref={sectionsRef.About} className="sobre">
           <div >
-            <h1 className="titulos"><span>#</span>about-me <span><img src={linha} alt="linha" /></span></h1>
+            <h1 className="titulos"><span>#</span>about-me <span><img src={menoslinha} alt="menos" /></span></h1>
             <p>Sou um programador em início de carreira com sólida base em linguagens como Python, Java e SQL, além de experiência prática com desenvolvimento
               web utilizando HTML, CSS e React. Já desenvolvi projetos pessoais e acadêmicos que envolvem desde criação de interfaces responsivas até manipulação
               de dados em bancos relacionais. Tenho facilidade para aprender novas tecnologias, foco em entregar código limpo e estou sempre buscando soluções práticas
@@ -142,16 +142,16 @@ function Home() {
           </div>
         </article>
         <article ref={sectionsRef.Contact}>
-          <h1 className="titulos"><span>#</span>contacts <span><img src={linha} alt="linha" /></span></h1>
+          <h1 className="titulos"><span>#</span>contacts <span><img src={menoslinha} alt="menos" /></span></h1>
           <div>
             <p>Estou aberto a novas oportunidades como programador, sejam projetos pontuais ou posições efetivas.</p>
             <p>Sinta-se à vontade para me contatar ou conhecer mais através das minhas redes sociais.</p>
           </div>
           <div>
             <p>Me envie uma mensagem!!</p>
-            <a href="https://www.linkedin.com/in/allisson-sousa-7b8b1b1b1/" target="_blank"><img src="/linkedin.png" alt="linkedin" /></a>
-            <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src="/mail.png" alt="mail" /></a>
-            <a href="" target="_blank"><img src="/discordia.png" alt="discord" /></a>
+            <a href="https://www.linkedin.com/in/allisson-sousa-7b8b1b1b1/" target="_blank"><img src={linkedin} alt="linkedin" /></a>
+            <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src={mail} alt="mail" /></a>
+            <a href="" target="_blank"><img src={discordia} alt="discord" /></a>
           </div>
         </article>
       </main>
