@@ -298,3 +298,13 @@ main {
     width: 400px;
     transform: translateY(50px);
 }
+
+footer{
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(---cor1);
+    color: white;
+}

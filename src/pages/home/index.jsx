@@ -3,12 +3,29 @@ import "./style.css";
 import { useRef } from "react";
 import { useEffect } from "react";
 
+import aboutperfil from './assets/aboutperfil.png';
+import analisedados from './assets/analisedados.png';
+import dadosfinanceiros from './assets/dados-financeiros.jpeg';
+import speed from './assets/speed.png';
+import skil from './assets/skil.png';
+import selecao from './assets/selecao.png';
+import discordia from './assets/discordia.png';
+import github from './assets/github.png';
+import mail from './assets/mail.png';
+import simbol from './assets/simbol.png';
+import perfil from './assets/perfil.png';
+import workingon from './assets/malha.png';
+import menoslinha from './assets/menos-linha-reta-horizontal.png';
+import linkedin from './assets/linkedin.png';
+import linha from './assets/linha.png';
+
+
 
 function exibeprojeto() {
   const projetos = [
-    { id: 1, imagem: "public/assets/analisedados.png", nome: "Saúde Quest", content: "Análise de dados com python usando dados do sistema único de saúde", tags: "Python Pandas AI SQL Excel" },
-    { id: 2, imagem: "public/assets/dados-financeiros.jpeg", nome: "Finance View", content: "Criação de um acompanhador de valores da bolsa atual com Cruds em Java", tags: "JAVA Springboot Spring SQL Docker" },
-    { id: 3, imagem: "public/assets/speed.png", nome: "Speed Timer", content: "Cronometro para cubo mágico com métricas ", tags: "HTML CSS JavaScript " }
+    { id: 1, imagem: analisedados, nome: "Saúde Quest", content: "Análise de dados com python usando dados do sistema único de saúde", tags: "Python Pandas AI SQL Excel" },
+    { id: 2, imagem: dadosfinanceiros, nome: "Finance View", content: "Criação de um acompanhador de valores da bolsa atual com Cruds em Java", tags: "JAVA Springboot Spring SQL Docker" },
+    { id: 3, imagem: speed, nome: "Speed Timer", content: "Cronometro para cubo mágico com métricas ", tags: "HTML CSS JavaScript " }
   ];
   return (
     <div className="projetos">
@@ -33,7 +50,7 @@ function habilidades() {
   ];
   return (
     <div className="habilidades">
-      <img src="public/assets/skil.png" alt="skilsmold" />
+      <img src={skil} alt="skilsmold" />
       <div className="cast">
         {habilidades.map((habilidade) => (
           <aside>
@@ -63,7 +80,7 @@ function Home() {
   return (
     <div id="corpo">
       <header id="cabeçalho">
-        <div><img src="public/assets/selecao.png" alt="simbolo" />Allisson</div>
+        <div><img src={selecao} alt="simbolo" />Allisson</div>
         <div id="navegacao">
           <div onClick={() => scrollToSection("Home")}><span>#</span>home</div>
           <div onClick={() => scrollToSection("Projects")}><span>#</span>trabalhos</div>
@@ -73,10 +90,10 @@ function Home() {
         </div>
       </header>
       <div className="contatosfixo" >
-        <img id="linha" src="public/assets/linha.png" alt="linha" />
-        <a href="" target="_blank"><img src="public/assets/discordia.png" alt="discord" /></a>
-        <a href="https://github.com/allissonsousa" target="_blank"><img src="public/assets/github.png" alt="github" /></a>
-        <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src="public/assets/mail.png" alt="e-mail" /></a>
+        <img id="linha" src={linha} alt="linha" />
+        <a href="" target="_blank"><img src={discordia} alt="discord" /></a>
+        <a href="https://github.com/allissonsousa" target="_blank"><img src={github} alt="github" /></a>
+        <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src={mail} alt="e-mail" /></a>
       </div>
       <main ref={sectionsRef.Home}>
         <aside className="sobremim" >
@@ -86,31 +103,31 @@ function Home() {
             <div id="contateme">Contate-me!!</div>
           </article>
           <article className="usuario">
-            <img id="simbolofoto" src="public/assets/simbol.png" alt="simbolo" />
-            <img id="foto" src="public/assets/perfil.png" alt="perfil" />
+            <img id="simbolofoto" src={simbol} alt="simbolo" />
+            <img id="foto" src={perfil} alt="perfil" />
             <p id="workingon"><span>#</span>Atualmente -- estudando JAVA</p>
-            <img id="pontofoto" src="public/assets/malha.png" alt="pontos" />
+            <img id="pontofoto" src={malha} alt="pontos" />
           </article>
         </aside>
         <aside className="slogan">
-          <img className="aspasinvertido rodaraspas" src="public/assets/aspas.png" alt="aspas" />
+          <img className="aspasinvertido rodaraspas" src={aspas} alt="aspas" />
           <div >
             <p>"A evolução não é instantânea, mas inevitável quando há curiosidade e persistência."</p>
             <p>— Carl Sagan</p>
           </div>
-          <img ref={sectionsRef.Projects} src="public/assets/aspas.png" alt="aspas" />
+          <img ref={sectionsRef.Projects} src={aspas} alt="aspas" />
         </aside>
         <article ref={sectionsRef.Skills}>
-          <h1 className="titulos"><span>#</span>projects <span><img src="public/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+          <h1 className="titulos"><span>#</span>projects <span><img src={linha} alt="linha" /></span></h1>
           {exibeprojeto()}
         </article>
         <article >
-          <h1 className="titulos"><span>#</span>skills <span><img src="public/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+          <h1 className="titulos"><span>#</span>skills <span><img src={linha} alt="linha" /></span></h1>
           {habilidades()}
         </article>
         <article ref={sectionsRef.About} className="sobre">
           <div >
-            <h1 className="titulos"><span>#</span>about-me <span><img src="public/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+            <h1 className="titulos"><span>#</span>about-me <span><img src={linha} alt="linha" /></span></h1>
             <p>Sou um programador em início de carreira com sólida base em linguagens como Python, Java e SQL, além de experiência prática com desenvolvimento
               web utilizando HTML, CSS e React. Já desenvolvi projetos pessoais e acadêmicos que envolvem desde criação de interfaces responsivas até manipulação
               de dados em bancos relacionais. Tenho facilidade para aprender novas tecnologias, foco em entregar código limpo e estou sempre buscando soluções práticas
@@ -121,26 +138,26 @@ function Home() {
               contato.</p>
           </div>
           <div >
-            <img className="perf" src="public/assets/aboutperfil.png" alt="pontos" />
+            <img className="perf" src={aboutperfil} alt="pontos" />
           </div>
         </article>
         <article ref={sectionsRef.Contact}>
-          <h1 className="titulos"><span>#</span>contacts <span><img src="public/assets/menos-linha-reta-horizontal.png" alt="linha" /></span></h1>
+          <h1 className="titulos"><span>#</span>contacts <span><img src={linha} alt="linha" /></span></h1>
           <div>
             <p>Estou aberto a novas oportunidades como programador, sejam projetos pontuais ou posições efetivas.</p>
             <p>Sinta-se à vontade para me contatar ou conhecer mais através das minhas redes sociais.</p>
           </div>
           <div>
             <p>Me envie uma mensagem!!</p>
-            <a href="https://www.linkedin.com/in/allisson-sousa-7b8b1b1b1/" target="_blank"><img src="public/assets/linkedin.png" alt="linkedin" /></a>
-            <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src="public/assets/mail.png" alt="mail" /></a>
-            <a href="" target="_blank"><img src="public/assets/discordia.png" alt="discord" /></a>
+            <a href="https://www.linkedin.com/in/allisson-sousa-7b8b1b1b1/" target="_blank"><img src="/linkedin.png" alt="linkedin" /></a>
+            <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src="/mail.png" alt="mail" /></a>
+            <a href="" target="_blank"><img src="/discordia.png" alt="discord" /></a>
           </div>
         </article>
       </main>
       <footer>
-        <div>
-          <p>Aks AI</p>
+        <div id="AskAI">
+          <p>Ask AI</p>
           <input type="text" />
         </div>
         <div id="AiResponse"></div>
