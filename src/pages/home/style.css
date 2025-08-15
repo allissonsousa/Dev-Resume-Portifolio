@@ -186,6 +186,7 @@ main {
     font-size: 13pt;
     font-weight: normal;
     transform: translate(0, -130px);
+    margin-bottom: 50px;
 
     & div {
         width: 600px;
@@ -301,10 +302,13 @@ main {
 
 footer {
     display: flex;
-    width: 90vw;
-    justify-content: space-between;
+    width: 100vw;
+    height: 150px;
+    justify-content: space-around;
     align-items: center;
     padding: 20px;
     background-color: var(---cor1);
     color: white;
+    border: 1px solid white;
+    bottom: 0px;
 }

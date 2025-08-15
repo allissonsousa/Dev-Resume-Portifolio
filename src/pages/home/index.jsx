@@ -95,7 +95,8 @@ function Home() {
         <a href="https://github.com/allissonsousa" target="_blank"><img src={github} alt="github" /></a>
         <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src={mail} alt="e-mail" /></a>
       </div>
-      <main ref={sectionsRef.Home}>
+      <div ref={sectionsRef.Home} height="50px"></div>
+      <main>
         <aside className="sobremim" >
           <article className="resumo">
             <h1>Sou um desenvolvedor <span>full stack</span> <br />dando <span>os primeiros passos</span> no mercado</h1>
@@ -115,15 +116,18 @@ function Home() {
             <p>"A evolução não é instantânea, mas inevitável quando há curiosidade e persistência."</p>
             <p>— Carl Sagan</p>
           </div>
-          <img ref={sectionsRef.Projects} src={aspas} alt="aspas" />
+          <img src={aspas} alt="aspas" />
+          <div ref={sectionsRef.Projects} height="100px"></div>
         </aside>
-        <article ref={sectionsRef.Skills}>
+        <article>
           <h1 className="titulos"><span>#</span>projects <span><img src={menoslinha} alt="menos" /></span></h1>
           {exibeprojeto()}
-        </article>
+          <div ref={sectionsRef.Skills} height="100px"></div>
+        </article >
         <article >
           <h1 className="titulos"><span>#</span>skills <span><img src={menoslinha} alt="menos" /></span></h1>
           {habilidades()}
+          <div ref={sectionsRef.Skills}></div>
         </article>
         <article ref={sectionsRef.About} className="sobre">
           <div >
@@ -154,15 +158,15 @@ function Home() {
             <a href="" target="_blank"><img src={discordia} alt="discord" /></a>
           </div>
         </article>
-        <footer>
-          <div id="AskAI">
-            <p>Ask AI</p>
-            <input type="text" />
-          </div>
-          <div id="AiResponse"></div>
-          <p>© 2025 Allisson Sousa</p>
-        </footer>
       </main>
+      <footer>
+        <div id="AskAI">
+          <p>Ask AI</p>
+          <input type="text" />
+        </div>
+        <div id="AiResponse"></div>
+        <p>© 2025 Allisson Sousa</p>
+      </footer>
     </div>
   );
 }
