@@ -3,22 +3,22 @@ import "./style.css";
 import { useRef } from "react";
 import { useEffect } from "react";
 
-import aboutperfil from './assets/aboutperfil.png';
-import analisedados from './assets/analisedados.png';
-import dadosfinanceiros from './assets/dados-financeiros.jpeg';
-import speed from './assets/speed.png';
-import skil from './assets/skil.png';
-import selecao from './assets/selecao.png';
-import discordia from './assets/discordia.png';
-import github from './assets/github.png';
-import mail from './assets/mail.png';
-import simbol from './assets/simbol.png';
-import perfil from './assets/perfil.png';
-import workingon from './assets/malha.png';
-import menoslinha from './assets/menos-linha-reta-horizontal.png';
-import linkedin from './assets/linkedin.png';
-import linha from './assets/linha.png';
-
+import aboutperfil from '/src/assets/aboutperfil.png';
+import analisedados from '/src/assets/analisedados.png';
+import dadosfinanceiros from '/src/assets/dados-financeiros.jpeg';
+import speed from '/src/assets/speed.png';
+import skil from '/src/assets/skil.png';
+import selecao from '/src/assets/selecao.png';
+import discordia from '/src/assets/discordia.png';
+import github from '/src/assets/github.png';
+import mail from '/src/assets/mail.png';
+import simbol from '/src/assets/simbol.png';
+import perfil from '/src/assets/perfil.png';
+import malha from '/src/assets/malha.png';
+import menoslinha from '/src/assets/menos-linha-reta-horizontal.png';
+import linkedin from '/src/assets/linkedin.png';
+import linha from '/src/assets/linha.png';
+import aspas from '/src/assets/aspas.png';
 
 
 function exibeprojeto() {
@@ -154,15 +154,15 @@ function Home() {
             <a href="" target="_blank"><img src={discordia} alt="discord" /></a>
           </div>
         </article>
+        <footer>
+          <div id="AskAI">
+            <p>Ask AI</p>
+            <input type="text" />
+          </div>
+          <div id="AiResponse"></div>
+          <p>© 2025 Allisson Sousa</p>
+        </footer>
       </main>
-      <footer>
-        <div id="AskAI">
-          <p>Ask AI</p>
-          <input type="text" />
-        </div>
-        <div id="AiResponse"></div>
-        <p>© 2025 Allisson Sousa</p>
-      </footer>
     </div>
   );
 }

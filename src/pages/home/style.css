@@ -299,7 +299,7 @@ main {
     transform: translateY(50px);
 }
 
-footer{
+footer {
     display: flex;
     width: 90vw;
     justify-content: space-between;
