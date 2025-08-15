@@ -13,6 +13,7 @@
     ---cor3: white;
     ---cor4: #c778dd;
     ---cor5: #ABB2BF;
+    ---cor6: rgb(61, 62, 66);
     ---font1: "Fira Code", monospace;
 }
 
@@ -43,12 +44,19 @@ span {
     visibility: hidden;
 }
 
+#corpo {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 80vw;
+    width: 83vw;
     position: fixed;
     height: 80px;
     position: fixed;
@@ -98,12 +106,14 @@ header {
 }
 
 /*parte principal do corpo*/
-main {
-    width: 80vw;
-    height: 100vh;
-    background-color: var(---cor1);
+#main {
+    width: 82vw;
+    height: auto;
+    background-color: var(---cor6);
     justify-content: center;
-    margin-top: 120px;
+    padding-top: 120px;
+    padding-left: 10px;
+
 }
 
 /*descrição resumida sobremim*/
@@ -186,7 +196,6 @@ main {
     font-size: 13pt;
     font-weight: normal;
     transform: translate(0, -130px);
-    margin-bottom: 50px;
 
     & div {
         width: 600px;
@@ -233,12 +242,12 @@ main {
 .projeto {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 250px;
     border: 1px solid rgba(255, 255, 255, 0.438);
     margin: 40px 10px 100px 10px;
 
     & img {
-        width: 297px;
+        width: 247px;
     }
 
     & tag {
@@ -252,11 +261,16 @@ main {
     }
 }
 
+#titles {
+    padding-top: 100px;
+}
+
 .habilidades {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 80vw;
+    padding: 20px;
 
 
     & aside {
@@ -287,6 +301,7 @@ main {
 
 .sobre {
     display: flex;
+    padding-top: 100px;
 
     & p {
         height: 200px;
@@ -300,15 +315,50 @@ main {
     transform: translateY(50px);
 }
 
+#contactsartigo {
+    padding-top: 100px;
+    height: 500px;
+}
+
+#Contatos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    & img {
+        width: 25px;
+        padding: 2px;
+    }
+
+    & #falecomigo {
+        width: 240px;
+        margin-top: 20px;
+    }
+
+    & #enviemensagem {
+        height: 100px;
+        width: 200px;
+        border: 1px solid white;
+        padding: 10px;
+    }
+}
+
 footer {
+    justify-content: space-around;
+    border-top: 1px solid white;
+    background-color: var(---cor1);
     display: flex;
     width: 100vw;
-    height: 150px;
-    justify-content: space-around;
+    height: 200px;
     align-items: center;
-    padding: 20px;
-    background-color: var(---cor1);
     color: white;
-    border: 1px solid white;
-    bottom: 0px;
+
+    & aside {
+        width: 82vw;
+        background-color: var(---cor6);
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 }

@@ -21,11 +21,12 @@ import linha from '/src/assets/linha.png';
 import aspas from '/src/assets/aspas.png';
 
 
-function exibeprojeto() {
+function Exibeprojeto() {
   const projetos = [
     { id: 1, imagem: analisedados, nome: "Saúde Quest", content: "Análise de dados com python usando dados do sistema único de saúde", tags: "Python Pandas AI SQL Excel" },
     { id: 2, imagem: dadosfinanceiros, nome: "Finance View", content: "Criação de um acompanhador de valores da bolsa atual com Cruds em Java", tags: "JAVA Springboot Spring SQL Docker" },
-    { id: 3, imagem: speed, nome: "Speed Timer", content: "Cronometro para cubo mágico com métricas ", tags: "HTML CSS JavaScript " }
+    { id: 3, imagem: speed, nome: "Speed Timer", content: "Cronometro para cubo mágico com métricas ", tags: "HTML CSS JavaScript " },
+    { id: 4, imagem: analisedados, nome: "Projeto teste", content: "Teste teste teste", tags: "TESTE TESTE TESTE" }
   ];
   return (
     <div className="projetos">
@@ -41,7 +42,7 @@ function exibeprojeto() {
   );
 }
 
-function habilidades() {
+function Habilidades() {
   const habilidades = [
     { id: 1, habilitty: "Linguagens", tecnologia: "Python  React  Java  JavaScript " },
     { id: 2, habilitty: "Banco de Dados", tecnologia: "SQL Server  MySQL  MongoBD" },
@@ -62,6 +63,21 @@ function habilidades() {
     </div>
   );
 }
+
+function Rodape() {
+  return (
+    <footer>
+      <aside>
+        <div id="AskAI">
+          <p>Ask AI</p>
+          <input type="text" />
+        </div>
+        <div id="AiResponse"></div>
+        <p>© 2025 Allisson Sousa</p>
+      </aside>
+    </footer>
+  )
+}
 //funçao principal que exporta a pagina 
 function Home() {
   const home = useState(false);
@@ -75,7 +91,6 @@ function Home() {
   const scrollToSection = (section) => {
     sectionsRef[section]?.current?.scrollIntoView({ behavior: "smooth" });
   };
-
 
   return (
     <div id="corpo">
@@ -96,8 +111,8 @@ function Home() {
         <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src={mail} alt="e-mail" /></a>
       </div>
       <div ref={sectionsRef.Home} height="50px"></div>
-      <main>
-        <aside className="sobremim" >
+      <div id="main">
+        <article className="sobremim" >
           <article className="resumo">
             <h1>Sou um desenvolvedor <span>full stack</span> <br />dando <span>os primeiros passos</span> no mercado</h1>
             <p id="efeito">"Criatividade e inovação sempre andam de mãos dadas"</p>
@@ -109,8 +124,8 @@ function Home() {
             <p id="workingon"><span>#</span>Atualmente -- estudando JAVA</p>
             <img id="pontofoto" src={malha} alt="pontos" />
           </article>
-        </aside>
-        <aside className="slogan">
+        </article>
+        <article className="slogan">
           <img className="aspasinvertido rodaraspas" src={aspas} alt="aspas" />
           <div >
             <p>"A evolução não é instantânea, mas inevitável quando há curiosidade e persistência."</p>
@@ -118,16 +133,16 @@ function Home() {
           </div>
           <img src={aspas} alt="aspas" />
           <div ref={sectionsRef.Projects} height="100px"></div>
-        </aside>
+        </article>
         <article>
           <h1 className="titulos"><span>#</span>projects <span><img src={menoslinha} alt="menos" /></span></h1>
-          {exibeprojeto()}
-          <div ref={sectionsRef.Skills} height="100px"></div>
-        </article >
-        <article >
-          <h1 className="titulos"><span>#</span>skills <span><img src={menoslinha} alt="menos" /></span></h1>
-          {habilidades()}
+          <Exibeprojeto />
           <div ref={sectionsRef.Skills}></div>
+        </article >
+        <article id="titles">
+          <h1 className="titulos"><span>#</span>skills <span><img src={menoslinha} alt="menos" /></span></h1>
+          <Habilidades />
+
         </article>
         <article ref={sectionsRef.About} className="sobre">
           <div >
@@ -145,28 +160,23 @@ function Home() {
             <img className="perf" src={aboutperfil} alt="pontos" />
           </div>
         </article>
-        <article ref={sectionsRef.Contact}>
+        <article id="contactsartigo" ref={sectionsRef.Contact}>
           <h1 className="titulos"><span>#</span>contacts <span><img src={menoslinha} alt="menos" /></span></h1>
-          <div>
-            <p>Estou aberto a novas oportunidades como programador, sejam projetos pontuais ou posições efetivas.</p>
-            <p>Sinta-se à vontade para me contatar ou conhecer mais através das minhas redes sociais.</p>
-          </div>
-          <div>
-            <p>Me envie uma mensagem!!</p>
-            <a href="https://www.linkedin.com/in/allisson-sousa-7b8b1b1b1/" target="_blank"><img src={linkedin} alt="linkedin" /></a>
-            <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src={mail} alt="mail" /></a>
-            <a href="" target="_blank"><img src={discordia} alt="discord" /></a>
+          <div id="Contatos">
+            <div id="falecomigo">
+              <p>Estou aberto a novas oportunidades como programador, sejam projetos pontuais ou posições efetivas.</p>
+              <p>Sinta-se à vontade para me contatar ou conhecer mais através das minhas redes sociais.</p>
+            </div>
+            <div id="enviemensagem">
+              <p>Me envie uma mensagem!!</p>
+              <a href="https://www.linkedin.com/in/allisson-sousa-7b8b1b1b1/" target="_blank"><img src={linkedin} alt="linkedin" /></a>
+              <a href="mailto:allissonsousa7@outlook.com" target="_blank"><img src={mail} alt="mail" /></a>
+              <a href="" target="_blank"><img src={discordia} alt="discord" /></a>
+            </div>
           </div>
         </article>
-      </main>
-      <footer>
-        <div id="AskAI">
-          <p>Ask AI</p>
-          <input type="text" />
-        </div>
-        <div id="AiResponse"></div>
-        <p>© 2025 Allisson Sousa</p>
-      </footer>
+      </div>
+      <Rodape />
     </div>
   );
 }
