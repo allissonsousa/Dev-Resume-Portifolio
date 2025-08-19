@@ -52,6 +52,7 @@ span {
 }
 
 header {
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -60,23 +61,22 @@ header {
     position: fixed;
     height: 80px;
     position: fixed;
-    background-color: var(---cor1);
-    z-index: 2;
-    filter: blur(1);
-    opacity: 0.5;
+    background-color: rgba(48, 43, 43, 0.842);
+    z-index: 1;
 
     & #navegacao {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 30vw;
-        z-index: 2;
+        z-index: 1;
     }
 
     & img {
         width: 20px;
     }
 }
+
 
 #navegacao>div:hover {
     cursor: pointer;
