@@ -173,13 +173,13 @@ header {
     transform: translateY(120px);
     width: 150px;
     margin-left: 90px;
-    animation: pulsa 3s ease-in-out forwards;
+    animation: pulsa 2s ease-in-out forwards;
 }
 @keyframes pulsa {
     from {
         scale: 1;
     } to {
-    scale: 1.5
+    scale: 1.2
 }
 }
 

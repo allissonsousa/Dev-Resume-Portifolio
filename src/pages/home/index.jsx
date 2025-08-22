@@ -38,6 +38,7 @@ function Exibeprojeto() {
       content:
         "Análise de dados com python usando dados do sistema único de saúde",
       tags: "Python Pandas AI SQL Excel",
+      linque: "https://github.com/allissonsousa/Health-Data-Py",
     },
     {
       id: 2,
@@ -46,6 +47,7 @@ function Exibeprojeto() {
       content:
         "Criação de um acompanhador de valores da bolsa atual com Cruds em Java",
       tags: "JAVA Springboot Spring SQL Docker",
+      linque: "",
     },
     {
       id: 3,
@@ -53,13 +55,16 @@ function Exibeprojeto() {
       nome: "Speed Timer",
       content: "Cronometro para cubo mágico com métricas ",
       tags: "HTML CSS JavaScript ",
+      linque:
+        "https://allissonsousa.github.io/SpeedCubee-Timer/pages/home.html",
     },
     {
       id: 4,
       imagem: analisedados,
-      nome: "Projeto teste",
-      content: "Teste teste teste",
-      tags: "TESTE TESTE TESTE",
+      nome: "Python Study",
+      content: "Estudos e testes realizados com python",
+      tags: "Python Excel SQL Pandas",
+      linque: "https://github.com/allissonsousa/Python-Study",
     },
   ];
   return (
@@ -70,7 +75,9 @@ function Exibeprojeto() {
           <tag>{projeto.tags}</tag>
           <h2>{projeto.nome}</h2>
           <p>{projeto.content}</p>
-          <a href="">Ver projeto</a>
+          <a href={projeto.linque} target="_blank">
+            Ver projeto
+          </a>
         </div>
       ))}
     </div>
