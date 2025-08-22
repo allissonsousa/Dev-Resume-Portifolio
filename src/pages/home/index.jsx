@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./style.css";
 import { useRef } from "react";
 import { useEffect } from "react";
-
 import aboutperfil from "/src/assets/aboutperfil.png";
 import analisedados from "/src/assets/analisedados.png";
 import dadosfinanceiros from "/src/assets/dados-financeiros.jpeg";
@@ -61,6 +60,7 @@ function Exibeprojeto() {
           <tag>{projeto.tags}</tag>
           <h2>{projeto.nome}</h2>
           <p>{projeto.content}</p>
+          <a href="">Ver projeto</a>
         </div>
       ))}
     </div>
@@ -281,7 +281,7 @@ function Home() {
                 <img src={mail} alt="mail" />
               </a>
               <a
-                href="https://discordapp.com/users/633418580851163147"
+                href="https://discordapp.com/users/692403383868588066"
                 target="_blank"
               >
                 <img src={discordia} alt="discord" />
