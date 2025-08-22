@@ -19,6 +19,16 @@ import linkedin from "/src/assets/linkedin.png";
 import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
 
+
+// Componente de carregamento, tela toda, frase e imagem
+function CarregandoPagina(){
+  return (
+    <div className="carregando">
+    </div>
+  );
+}
+
+//Exibição simples dos projetos
 function Exibeprojeto() {
   const projetos = [
     {
@@ -67,6 +77,7 @@ function Exibeprojeto() {
   );
 }
 
+//Exibição das habilidades
 function Habilidades() {
   const habilidades = [
     {
@@ -99,8 +110,7 @@ function Habilidades() {
       </div>
     </div>
   );
-}
-
+//Exibição do rodapé
 function Rodape() {
   return (
     <footer>
