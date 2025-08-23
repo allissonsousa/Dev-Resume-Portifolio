@@ -18,12 +18,16 @@ import menoslinha from "/src/assets/menos-linha-reta-horizontal.png";
 import linkedin from "/src/assets/linkedin.png";
 import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
-
+import carregando from "/src/assets/carregando.png";
 
 // Componente de carregamento, tela toda, frase e imagem
-function CarregandoPagina(){
+function CarregandoPagina() {
   return (
-    <div className="carregando">
+    <div className="carregando somecarregamento">
+      <article>
+        <img src={carregando} alt="loading" />
+        <h1 id="frasecarregamento">Transformando sonhos em códigos</h1>
+      </article>
     </div>
   );
 }
@@ -117,6 +121,7 @@ function Habilidades() {
       </div>
     </div>
   );
+}
 //Exibição do rodapé
 function Rodape() {
   return (
@@ -127,7 +132,7 @@ function Rodape() {
           <input type="text" />
         </div>
         <div id="AiResponse"></div>
-        <p>© 2025 Allisson Sousa</p>
+        <p>© 2025 All rights by Allisson Sousa</p>
       </aside>
     </footer>
   );
@@ -148,6 +153,7 @@ function Home() {
 
   return (
     <div id="corpo">
+      <CarregandoPagina />
       <header id="cabeçalho">
         <div>
           <img src={selecao} alt="simbolo" />
