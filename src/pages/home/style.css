@@ -87,7 +87,8 @@ span {
   }
 }
 .somecarregamento {
-  animation: somecarregar 2s ease-out forwards;
+  animation: somecarregar 1s ease-in-out forwards;
+  animation-delay: 4s;
 }
 @keyframes somecarregar {
   from {
@@ -248,6 +249,7 @@ header {
   width: 150px;
   margin-left: 90px;
   animation: pulsa 2s ease-in-out forwards;
+  animation-delay: 4s;
 }
 @keyframes pulsa {
   from {
@@ -337,6 +339,8 @@ header {
   width: 250px;
   border: 1px solid rgba(255, 255, 255, 0.438);
   margin: 40px 10px 100px 10px;
+  transition-duration: 1s;
+  background-color: var(---cor1);
 
   & img {
     width: 247px;
@@ -351,6 +355,9 @@ header {
   p {
     padding: 3px;
   }
+}
+.projeto:hover {
+  scale: 1.2;
 }
 
 #titles {
@@ -443,7 +450,7 @@ footer {
   & aside {
     width: 82vw;
     background-color: var(---cor6);
-    height: 200px;
+    height: 198px;
     display: flex;
     justify-content: space-around;
     align-items: center;

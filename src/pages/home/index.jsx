@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./style.css";
 import { useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import aboutperfil from "/src/assets/aboutperfil.png";
 import analisedados from "/src/assets/analisedados.png";
@@ -32,8 +34,18 @@ function CarregandoPagina() {
   );
 }
 
-//Exibição simples dos projetos
+//Exibição dos projetos ao rolar a tela até eles
 function Exibeprojeto() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
   const projetos = [
     {
       id: 1,
@@ -74,7 +86,17 @@ function Exibeprojeto() {
   return (
     <div className="projetos">
       {projetos.map((projeto) => (
-        <div className="projeto" key={projeto.id}>
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: -30 },
+          }}
+          className="projeto"
+          key={projeto.id}
+        >
           <img src={projeto.imagem} />
           <tag>{projeto.tags}</tag>
           <h2>{projeto.nome}</h2>
@@ -82,7 +104,7 @@ function Exibeprojeto() {
           <a href={projeto.linque} target="_blank">
             Ver projeto
           </a>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
