@@ -21,6 +21,7 @@ import linkedin from "/src/assets/linkedin.png";
 import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
 import carregando from "/src/assets/carregando.png";
+import { delay } from "framer-motion/dom";
 
 // Componente de carregamento, tela toda, frase e imagem
 function CarregandoPagina() {
@@ -55,6 +56,7 @@ function Exibeprojeto() {
         "Análise de dados com python usando dados do sistema único de saúde",
       tags: "Python Pandas AI SQL Excel",
       linque: "https://github.com/allissonsousa/Health-Data-Py",
+      posicao: "1s",
     },
     {
       id: 2,
@@ -64,6 +66,7 @@ function Exibeprojeto() {
         "Criação de um acompanhador de valores da bolsa atual com Cruds em Java",
       tags: "JAVA Springboot Spring SQL Docker",
       linque: "",
+      posicao: "3s",
     },
     {
       id: 3,
@@ -73,6 +76,7 @@ function Exibeprojeto() {
       tags: "HTML CSS JavaScript ",
       linque:
         "https://allissonsousa.github.io/SpeedCubee-Timer/pages/home.html",
+      posicao: "5s",
     },
     {
       id: 4,
@@ -81,6 +85,7 @@ function Exibeprojeto() {
       content: "Estudos e testes realizados com python",
       tags: "Python Excel SQL Pandas",
       linque: "https://github.com/allissonsousa/Python-Study",
+      posicao: "7s",
     },
   ];
   return (
@@ -90,12 +95,13 @@ function Exibeprojeto() {
           ref={ref}
           initial="hidden"
           animate={controls}
-          variants={{
-            visible: { opacity: 1, y: 0 },
-            hidden: { opacity: 0, y: 30 },
-          }}
           className="projeto"
           key={projeto.id}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 100 },
+          }}
+          style={(animation = "delay : projeto.posicao")}
         >
           <img src={projeto.imagem} />
           <div>{projeto.tags}</div>
