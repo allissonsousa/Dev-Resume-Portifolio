@@ -91,17 +91,17 @@ function Exibeprojeto() {
           initial="hidden"
           animate={controls}
           variants={{
-            visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: -30 },
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 30 },
           }}
           className="projeto"
           key={projeto.id}
         >
           <img src={projeto.imagem} />
-          <tag>{projeto.tags}</tag>
+          <div>{projeto.tags}</div>
           <h2>{projeto.nome}</h2>
           <p>{projeto.content}</p>
-          <a href={projeto.linque} target="_blank">
+          <a href={projeto.linque} target="_blank" rel="noopener noreferrer">
             Ver projeto
           </a>
         </motion.div>
