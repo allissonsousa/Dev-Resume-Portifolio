@@ -101,7 +101,6 @@ function Exibeprojeto() {
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: 100 },
           }}
-          style={(animation = "delay : projeto.posicao")}
         >
           <img src={projeto.imagem} />
           <div>{projeto.tags}</div>
