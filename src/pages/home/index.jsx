@@ -22,6 +22,7 @@ import linkedin from "/src/assets/linkedin.png";
 import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
 import carregando from "/src/assets/carregando.png";
+import ptstudo from "src/assets/pythonstudies.png"
 import { delay } from "framer-motion/dom";
 
 // Componente de carregamento, tela toda, frase e imagem
@@ -63,7 +64,7 @@ function Exibeprojeto() {
       nome: "Finance View",
       content: "Acompanhador de valores da bolsa atual com Cruds em Java",
       tags: "JAVA Spring SQL Docker",
-      linque: "",
+      linque: "https://github.com/allissonsousa/Finance-Base-Java",
     },
     {
       id: 3,
@@ -76,7 +77,7 @@ function Exibeprojeto() {
     },
     {
       id: 4,
-      imagem: analisedados,
+      imagem: ptstudo,
       nome: "Python Study",
       content: "Estudos e testes realizados com python",
       tags: "Python Excel SQL Pandas",
