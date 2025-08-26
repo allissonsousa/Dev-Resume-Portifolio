@@ -129,6 +129,9 @@ span {
   }
 }
 
+#menucompacto {
+  display: none;
+}
 header {
   backdrop-filter: blur(10px);
   display: flex;
@@ -222,7 +225,7 @@ header {
   padding: 2px;
   font-size: 10pt;
   cursor: pointer;
-  transition-duration: 0.8s;
+  transition-duration: 0.3s;
 }
 
 #contateme:hover {

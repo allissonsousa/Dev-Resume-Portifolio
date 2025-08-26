@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./stylePC.css";
+import "./styleCELL.css";
 import { useRef } from "react";
 import { animationControls, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -199,7 +200,8 @@ function Home() {
     <div id="corpo">
       <CarregandoPagina />
       <header id="cabeçalho">
-        <div>
+        <div id="menucompacto"></div>
+        <div id="allissonsimbolo">
           <img src={selecao} alt="simbolo" />
           Allisson
         </div>
@@ -221,7 +223,7 @@ function Home() {
           </div>
         </div>
       </header>
-      <div className="contatosfixo">
+      <div className="contatosfixo somecell">
         <img id="linha" src={linha} alt="linha" />
         <a href="" target="_blank">
           <img src={discordia} alt="discord" />
@@ -244,7 +246,9 @@ function Home() {
             <p id="efeito">
               "Criatividade e inovação sempre andam de mãos dadas"
             </p>
-            <div id="contateme">Contate-me!!</div>
+            <div id="contateme" className="somecell">
+              Contate-me!!
+            </div>
           </article>
           <article className="usuario">
             <img id="simbolofoto" src={simbol} alt="simbolo" />
