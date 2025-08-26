@@ -5,7 +5,6 @@
   padding: 0px;
   margin: 0px;
 }
-
 :root {
   ---cor1: rgb(48, 43, 43);
   ---cor2: rgb(48, 43, 43);
@@ -48,6 +47,7 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
 }
 
 .carregando {
@@ -146,7 +146,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 30vw;
+    width: 50vw;
     z-index: 1;
   }
 
@@ -222,6 +222,7 @@ header {
   padding: 2px;
   font-size: 10pt;
   cursor: pointer;
+  transition-duration: 0.8s;
 }
 
 #contateme:hover {
@@ -246,7 +247,7 @@ header {
 
 #simbolofoto {
   transform: translateY(120px);
-  width: 150px;
+  width: 12vw;
   margin-left: 90px;
   animation: pulsa 2s ease-in-out forwards;
   animation-delay: 4s;
@@ -261,7 +262,7 @@ header {
 }
 
 #foto {
-  width: 300px;
+  width: 20vw;
   z-index: 1;
   margin-left: 100px;
   transform: rotateY(180deg);
@@ -270,7 +271,7 @@ header {
 #pontofoto {
   align-self: self-end;
   z-index: 1;
-  width: 100px;
+  width: 7vw;
   animation: rotate 16s infinite;
 }
 
@@ -339,31 +340,47 @@ header {
   width: 250px;
   border: 1px solid rgba(255, 255, 255, 0.438);
   margin: 40px 10px 100px 10px;
-  transition-duration: 1s;
+  background-color: var(--cor1); /* <-- cuidado: era ---cor1 */
+  transition-duration: 0.4s;
+  opacity: 0;
+  transform: translateY(60px);
   background-color: var(---cor1);
+}
 
-  & img {
-    width: 247px;
-  }
+.projeto img {
+  width: 247px;
+}
 
-  & Tag {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 3px;
-  }
+.projeto div {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 3px;
+  background-color: var(---cor1);
+}
 
-  & h2,
-  p {
-    padding: 3px;
-  }
+.projeto h2,
+p,
+a {
+  padding: 3px;
+  background-color: var(---cor1);
+}
+
+.projeto a {
+  color: white;
+  text-decoration: none;
+  background-color: var(---cor4);
+  padding: 3px;
+  width: max-content;
+  align-self: baseline;
+  cursor: pointer;
+}
+
+.projeto a:hover {
+  color: var(---cor1);
 }
 .projeto:hover {
-  scale: 1.2;
+  scale: 1.15;
+  transition-duration: 0.6s;
 }
-
-.projetos div:nth-child(1) {animation-delay: 0s}
-.projetos div:nth-child(2) {animation-delay: 1s}
-.projetos div:nth-child(3) {animation-delay: 0.2s}
-.projetos div:nth-child(4) {animation-delay: 0.4s}
 
 #titles {
   padding-top: 100px;
@@ -374,27 +391,34 @@ header {
   flex-direction: row;
   justify-content: space-around;
   width: 80vw;
+  height: 400px;
   padding: 20px;
+  font-size: small;
+  font-weight: lighter;
 
-  & aside {
+  & .habilidade {
     border: 1px solid white;
     height: fit-content;
-    width: 96px;
+    width: 110px;
     margin: 100px 5px;
     padding: 3px;
+    height: 40px;
+    overflow: hidden;
   }
 
   & img {
-    width: 320px;
-    height: 350px;
+    width: 20vw;
+    height: 20vw;
     margin-top: 50px;
-  }
-
-  & h4 {
-    border-bottom: 1px solid white;
   }
 }
 
+#titulohabilidade {
+  border-bottom: 1px solid white;
+  font-weight: bolder;
+  background-color: var(---cor4);
+  color: var(---cor2);
+}
 .cast {
   display: flex;
 }
@@ -404,13 +428,14 @@ header {
   padding-top: 100px;
 
   & p {
-    height: 200px;
+    height: 120px;
     margin: 40px;
+    width: 50vw;
   }
 }
 
 .perf {
-  width: 400px;
+  width: 22vw;
   transform: translateY(50px);
 }
 
@@ -447,7 +472,7 @@ footer {
   border-top: 1px solid white;
   background-color: var(---cor1);
   display: flex;
-  width: 100vw;
+  width: 98vw;
   height: 200px;
   align-items: center;
   color: white;

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./style.css";
+import "./stylePC.css";
 import { useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { animationControls, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import aboutperfil from "/src/assets/aboutperfil.png";
@@ -38,7 +38,7 @@ function CarregandoPagina() {
 //Exibição dos projetos ao rolar a tela até eles
 function Exibeprojeto() {
   const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ threshold: 0.3 });
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -52,21 +52,17 @@ function Exibeprojeto() {
       id: 1,
       imagem: analisedados,
       nome: "Saúde Quest",
-      content:
-        "Análise de dados com python usando dados do sistema único de saúde",
-      tags: "Python Pandas AI SQL Excel",
+      content: "Análise de dados públicos com python ",
+      tags: "Python API AI SQL Excel",
       linque: "https://github.com/allissonsousa/Health-Data-Py",
-      posicao: "1s",
     },
     {
       id: 2,
       imagem: dadosfinanceiros,
       nome: "Finance View",
-      content:
-        "Criação de um acompanhador de valores da bolsa atual com Cruds em Java",
-      tags: "JAVA Springboot Spring SQL Docker",
+      content: "Acompanhador de valores da bolsa atual com Cruds em Java",
+      tags: "JAVA Spring SQL Docker",
       linque: "",
-      posicao: "3s",
     },
     {
       id: 3,
@@ -76,7 +72,6 @@ function Exibeprojeto() {
       tags: "HTML CSS JavaScript ",
       linque:
         "https://allissonsousa.github.io/SpeedCubee-Timer/pages/home.html",
-      posicao: "5s",
     },
     {
       id: 4,
@@ -85,29 +80,30 @@ function Exibeprojeto() {
       content: "Estudos e testes realizados com python",
       tags: "Python Excel SQL Pandas",
       linque: "https://github.com/allissonsousa/Python-Study",
-      posicao: "7s",
     },
   ];
   return (
-    <div className="projetos">
-      {projetos.map((projeto) => (
+    <div ref={ref} className="projetos">
+      {projetos.map((projeto, i) => (
         <motion.div
-          ref={ref}
+          className={"projeto"} // sempre tem a classe projeto
           initial="hidden"
           animate={controls}
-          className="projeto"
-          key={projeto.id}
           variants={{
-            visible: { opacity: 1, y: 0 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.5, delay: i * 0.2 },
+            }, // só ativa a classe
             hidden: { opacity: 0, y: 100 },
           }}
         >
-          <img src={projeto.imagem} />
+          <img src={projeto.imagem} alt="Foto do Projeto" />
           <div>{projeto.tags}</div>
           <h2>{projeto.nome}</h2>
           <p>{projeto.content}</p>
           <a href={projeto.linque} target="_blank" rel="noopener noreferrer">
-            Ver projeto
+            Ver projeto{">>> "}
           </a>
         </motion.div>
       ))}
@@ -117,7 +113,21 @@ function Exibeprojeto() {
 
 //Exibição das habilidades
 function Habilidades() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.3 });
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
   const habilidades = [
+    {
+      id: 3,
+      habilitty: "Ferramentas",
+      tecnologia: "VSCode  Figma  Git  Excel  PowerBI  Pycharm  InteliJ",
+    },
     {
       id: 1,
       habilitty: "Linguagens",
@@ -125,25 +135,32 @@ function Habilidades() {
     },
     {
       id: 2,
-      habilitty: "Banco de Dados",
+      habilitty: "DataBases",
       tecnologia: "SQL Server  MySQL  MongoBD",
-    },
-    {
-      id: 3,
-      habilitty: "Ferramentas",
-      tecnologia: "VSCode  Figma  Git  Excel  PowerBI  Pycharm  InteliJ",
     },
     { id: 4, habilitty: "Outros", tecnologia: "HTML  CSS  ADM" },
   ];
   return (
-    <div className="habilidades">
-      <img src={skil} alt="skilsmold" />
+    <div ref={ref} className="habilidades">
+      <img src={skil} alt="skillmod" />
       <div className="cast">
-        {habilidades.map((habilidade) => (
-          <aside>
-            <h4>{habilidade.habilitty}</h4>
+        {habilidades.map((habilidade, i) => (
+          <motion.div
+            className="habilidade"
+            initial="hidden"
+            animate={controls}
+            variants={{
+              visible: {
+                opacity: 1,
+                height: "min-content",
+                transition: { duration: 0.5, delay: i * 0.4 },
+              }, // só ativa a classe
+              hidden: { opacity: 1, height: "40px" },
+            }}
+          >
+            <p id="titulohabilidade">{habilidade.habilitty}</p>
             <p>{habilidade.tecnologia}</p>
-          </aside>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -278,23 +295,17 @@ function Home() {
               </span>
             </h1>
             <p>
-              Sou um programador em início de carreira com sólida base em
-              linguagens como Python, Java e SQL, além de experiência prática
-              com desenvolvimento web utilizando HTML, CSS e React. Já
-              desenvolvi projetos pessoais e acadêmicos que envolvem desde
-              criação de interfaces responsivas até manipulação de dados em
-              bancos relacionais. Tenho facilidade para aprender novas
-              tecnologias, foco em entregar código limpo e estou sempre buscando
-              soluções práticas para os desafios que surgem.
+              Sou programador em início de carreira, com conhecimentos em
+              Python, Java, SQL e desenvolvimento web (HTML, CSS e React). Já
+              realizei projetos pessoais e acadêmicos que envolvem interfaces
+              responsivas e manipulação de dados, sempre buscando aprender mais
+              e entregar soluções práticas.
             </p>
             <p>
-              Atualmente estou disponível para trabalhos freelance e me coloco à
-              disposição para colaborar em projetos de desenvolvimento web,
-              automações, integrações com banco de dados e outras demandas de
-              programação. Se você procura alguém comprometido, comunicativo e
-              com vontade de crescer junto com o projeto, será um prazer
-              contribuir. Para mais informações ou para conversarmos sobre
-              possíveis parcerias, estou à disposição para contato.
+              Estou iniciando na área de programação e disponível para colaborar
+              em projetos de desenvolvimento web, automações e integrações com
+              banco de dados. Busco aprender e crescer junto com os desafios,
+              oferecendo dedicação e comprometimento em cada oportunidade.
             </p>
           </div>
           <div>
