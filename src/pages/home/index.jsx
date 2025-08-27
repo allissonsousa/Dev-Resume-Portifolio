@@ -22,8 +22,7 @@ import linkedin from "/src/assets/linkedin.png";
 import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
 import carregando from "/src/assets/carregando.png";
-import ptstudo from "src/assets/pythonstudies.png"
-import { delay } from "framer-motion/dom";
+import ptstudo from "/src/assets/pythonstudies.png";
 
 // Componente de carregamento, tela toda, frase e imagem
 function CarregandoPagina() {

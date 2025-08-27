@@ -1,6 +1,5 @@
-@media screen and (max-width:700px) {
-  @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Lobster&family=Playwrite+CA:wght@100..400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Lobster&family=Playwrite+CA:wght@100..400&display=swap");
+@media screen and (max-width: 800px) {
   * {
     box-sizing: border-box;
     padding: 0px;
@@ -154,7 +153,7 @@
   }
 
   #allissonsimbolo {
-    display: block;
+    display: none;
   }
 
   /*icones fixos na lateral para acessar minhas redes sociais*/
