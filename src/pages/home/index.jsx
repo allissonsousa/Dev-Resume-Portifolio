@@ -25,6 +25,25 @@ import carregando from "/src/assets/carregando.png";
 import ptstudo from "/src/assets/pythonstudies.png";
 
 // Componente de carregamento, tela toda, frase e imagem
+function menucompacto() {
+  <div id="navegacao">
+    <div onClick={() => scrollToSection("Home")}>
+      <span>#</span>home
+    </div>
+    <div onClick={() => scrollToSection("Projects")}>
+      <span>#</span>trabalhos
+    </div>
+    <div onClick={() => scrollToSection("Skills")}>
+      <span>#</span>skills
+    </div>
+    <div onClick={() => scrollToSection("About")}>
+      <span>#</span>sobre
+    </div>
+    <div onClick={() => scrollToSection("Contact")}>
+      <span>#</span>contate-me
+    </div>
+  </div>;
+}
 function CarregandoPagina() {
   return (
     <div className="carregando somecarregamento">
