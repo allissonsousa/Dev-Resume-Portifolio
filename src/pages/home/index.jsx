@@ -23,131 +23,60 @@ import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
 import carregando from "/src/assets/carregando.png";
 import ptstudo from "/src/assets/pythonstudies.png";
-import { div } from "framer-motion/client";
 
-//ai
+import iconmenu from "/src/assets/menudireita.png";
 
-
-import { useState, useEffect }  from 'react';
-import './App.css';
-import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import {
-  MainContainer,
-  ChatContainer,
-  MessageList,
-  Message,
-  MessageInput,
-  TypingIndicator,
-} from '@chatscope/chat-ui-kit-react';
-
-const API_KEY ="YOUR_API_KEY_HERE"
-
-const App = () => {
-  const [messages, setMessages] = useState([
-    {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
-      sentTime: "just now",
-      sender: "ChatGPT",
-    },
-  ]);
-  const [isTyping, setIsTyping] = useState(false);
-
-  const handleSendRequest = async (message) => {
-    const newMessage = {
-      message,
-      direction: 'outgoing',
-      sender: "user",
-    };
-
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
-    setIsTyping(true);
-
-    try {
-      const response = await processMessageToChatGPT([...messages, newMessage]);
-      const content = response.choices[0]?.message?.content;
-      if (content) {
-        const chatGPTResponse = {
-          message: content,
-          sender: "ChatGPT",
-        };
-        setMessages((prevMessages) => [...prevMessages, chatGPTResponse]);
-      }
-    } catch (error) {
-      console.error("Error processing message:", error);
-    } finally {
-      setIsTyping(false);
-    }
+// Componente de carregamento, tela toda, frase e imagem
+function Menupequeno() {
+  const home = useState(false);
+  const sectionsRef = {
+    Home: useRef(null),
+    Projects: useRef(null),
+    About: useRef(null),
+    Contact: useRef(null),
+    Skills: useRef(null),
+  };
+  const scrollToSection = (section) => {
+    sectionsRef[section]?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  async function processMessageToChatGPT(chatMessages) {
-    const apiMessages = chatMessages.map((messageObject) => {
-      const role = messageObject.sender === "ChatGPT" ? "assistant" : "user";
-      return { role, content: messageObject.message };
-    });
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const apiRequestBody = {
-      "model": "gpt-3.5-turbo",
-      "messages": [
-        { role: "system", content: "I'm a Student using ChatGPT for learning" },
-        ...apiMessages,
-      ],
-    };
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer " + API_KEY,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(apiRequestBody),
-    });
-
-    return response.json();
-  }
+  useEffect(() => {
+    const aside = document.getElementById("navegacaolateral");
+    if (aside) {
+      aside.style.display = menuOpen ? "flex" : "none";
+    }
+  }, [menuOpen]);
 
   return (
-    <div className="App">
-      <div style={{ position:"relative", height: "800px", width: "700px"  }}>
-        <MainContainer>
-          <ChatContainer>       
-            <MessageList 
-              scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
-            >
-              {messages.map((message, i) => {
-                console.log(message)
-                return <Message key={i} model={message} />
-              })}
-            </MessageList>
-            <MessageInput placeholder="Send a Message" onSend={handleSendRequest} />        
-          </ChatContainer>
-        </MainContainer>
-      </div>
-    </div>
-  )
-}
-// Componente de carregamento, tela toda, frase e imagem
-function menucompacto() {
-  <div id="menuclick">  
-    <img src="iconmenu" alt="menuicone" />
-  </div>
-  <div id="navegacao">
-    <div onClick={() => scrollToSection("Home")}>
-      <span>#</span>home
-    </div>
-    <div onClick={() => scrollToSection("Projects")}>
-      <span>#</span>trabalhos
-    </div>
-    <div onClick={() => scrollToSection("Skills")}>
-      <span>#</span>skills
-    </div>
-    <div onClick={() => scrollToSection("About")}>
-      <span>#</span>sobre
-    </div>
-    <div onClick={() => scrollToSection("Contact")}>
-      <span>#</span>contate-me
-    </div>
-  </div>;
+    <>
+      <aside id="navegacaolateral" className="somepequeno">
+        <div onClick={() => scrollToSection("Home")}>
+          <span>#</span>home
+        </div>
+        <div onClick={() => scrollToSection("Projects")}>
+          <span>#</span>trabalhos
+        </div>
+        <div onClick={() => scrollToSection("Skills")}>
+          <span>#</span>skills
+        </div>
+        <div onClick={() => scrollToSection("About")}>
+          <span>#</span>sobre
+        </div>
+        <div onClick={() => scrollToSection("Contact")}>
+          <span>#</span>contate-me
+        </div>
+      </aside>
+      <nav id="menuclick" className="somepequeno">
+        <img src={iconmenu} alt="menuicone" onClick={toggleMenu} />
+      </nav>
+    </>
+  );
 }
 function CarregandoPagina() {
   return (
@@ -323,8 +252,8 @@ function Home() {
   return (
     <div id="corpo">
       <CarregandoPagina />
+      <Menupequeno />
       <header id="cabeçalho">
-        <div id="menucompacto"></div>
         <div id="allissonsimbolo">
           <img src={selecao} alt="simbolo" />
           Allisson
