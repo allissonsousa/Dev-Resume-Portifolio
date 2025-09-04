@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./stylePC.css";
+import "./styleTAB.css";
 import "./styleCELL.css";
 import { useRef } from "react";
 import { animationControls, motion, useAnimation } from "framer-motion";

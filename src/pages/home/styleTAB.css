@@ -1,11 +1,11 @@
-@media screen and (max-width:380px) {
+@media screen and (max-width:700px) {
   @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Lobster&family=Playwrite+CA:wght@100..400&display=swap");
 
   * {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-    font-size: 7pt;
+    font-size: 8pt;
   }
   :root {
     ---cor1: rgb(48, 43, 43);
@@ -29,11 +29,11 @@
     display: flex;
     background-color: var(---cor2);
     justify-content: center;
-    font-size: 5pt;
+    font-size: 10pt;
     font-family: var(---font1);
     overflow: scroll;
     font-weight: lighter;
-    line-height: 10pt;
+    line-height: 20pt;
   }
 
   #root::-webkit-scrollbar {
@@ -57,7 +57,7 @@
     height: 100vh;
     background-color: var(---cor1);
     color: white;
-    font-size: 6pt;
+    font-size: 10pt;
     position: absolute;
     z-index: 3;
     display: flex;
