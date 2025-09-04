@@ -23,10 +23,62 @@ import linkedin from "/src/assets/linkedin.png";
 import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
 import carregando from "/src/assets/carregando.png";
-import ptstudo from "src/assets/pythonstudies.png"
-import { delay } from "framer-motion/dom";
+import ptstudo from "/src/assets/pythonstudies.png";
+
+import iconmenu from "/src/assets/menudireita.png";
 
 // Componente de carregamento, tela toda, frase e imagem
+function Menupequeno() {
+  const home = useState(false);
+  const sectionsRef = {
+    Home: useRef(null),
+    Projects: useRef(null),
+    About: useRef(null),
+    Contact: useRef(null),
+    Skills: useRef(null),
+  };
+  const scrollToSection = (section) => {
+    sectionsRef[section]?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const aside = document.getElementById("navegacaolateral");
+    if (aside) {
+      aside.style.display = menuOpen ? "flex" : "none";
+    }
+  }, [menuOpen]);
+
+  return (
+    <>
+      <aside id="navegacaolateral" className="somepequeno">
+        <div onClick={() => scrollToSection("Home")}>
+          <span>#</span>home
+        </div>
+        <div onClick={() => scrollToSection("Projects")}>
+          <span>#</span>trabalhos
+        </div>
+        <div onClick={() => scrollToSection("Skills")}>
+          <span>#</span>skills
+        </div>
+        <div onClick={() => scrollToSection("About")}>
+          <span>#</span>sobre
+        </div>
+        <div onClick={() => scrollToSection("Contact")}>
+          <span>#</span>contate-me
+        </div>
+      </aside>
+      <nav id="menuclick" className="somepequeno">
+        <img src={iconmenu} alt="menuicone" onClick={toggleMenu} />
+      </nav>
+    </>
+  );
+}
 function CarregandoPagina() {
   return (
     <div className="carregando somecarregamento">
@@ -201,8 +253,8 @@ function Home() {
   return (
     <div id="corpo">
       <CarregandoPagina />
+      <Menupequeno />
       <header id="cabeçalho">
-        <div id="menucompacto"></div>
         <div id="allissonsimbolo">
           <img src={selecao} alt="simbolo" />
           Allisson
