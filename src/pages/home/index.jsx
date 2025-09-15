@@ -58,19 +58,19 @@ function Menupequeno() {
     <>
       <aside id="navegacaolateral" className="somepequeno">
         <div onClick={() => scrollToSection("Home")}>
-          <span>#</span>home
+          <span>#</span>Home
         </div>
         <div onClick={() => scrollToSection("Projects")}>
-          <span>#</span>trabalhos
+          <span>#</span>Trabalhos
         </div>
         <div onClick={() => scrollToSection("Skills")}>
-          <span>#</span>skills
+          <span>#</span>Habilidades
         </div>
         <div onClick={() => scrollToSection("About")}>
-          <span>#</span>sobre
+          <span>#</span>Sobre mim
         </div>
         <div onClick={() => scrollToSection("Contact")}>
-          <span>#</span>contate-me
+          <span>#</span>Contate-me
         </div>
       </aside>
       <nav id="menuclick" className="somepequeno">
@@ -261,19 +261,19 @@ function Home() {
         </div>
         <div id="navegacao">
           <div onClick={() => scrollToSection("Home")}>
-            <span>#</span>home
+            <span>#</span>Home
           </div>
           <div onClick={() => scrollToSection("Projects")}>
-            <span>#</span>trabalhos
+            <span>#</span>Trabalhos
           </div>
           <div onClick={() => scrollToSection("Skills")}>
-            <span>#</span>skills
+            <span>#</span>Habilidades
           </div>
           <div onClick={() => scrollToSection("About")}>
             <span>#</span>sobre
           </div>
           <div onClick={() => scrollToSection("Contact")}>
-            <span>#</span>contate-me
+            <span>#</span>Contate-me
           </div>
         </div>
       </header>
@@ -327,7 +327,7 @@ function Home() {
         </article>
         <article>
           <h1 className="titulos">
-            <span>#</span>projects{" "}
+            <span>#</span>Projetos{" "}
             <span>
               <img src={menoslinha} alt="menos" />
             </span>
@@ -337,7 +337,7 @@ function Home() {
         </article>
         <article id="titles">
           <h1 className="titulos">
-            <span>#</span>skills{" "}
+            <span>#</span>Habilidades{" "}
             <span>
               <img src={menoslinha} alt="menos" />
             </span>
@@ -347,7 +347,7 @@ function Home() {
         <article ref={sectionsRef.About} className="sobre">
           <div>
             <h1 className="titulos">
-              <span>#</span>about-me{" "}
+              <span>#</span>Sobre mim{" "}
               <span>
                 <img src={menoslinha} alt="menos" />
               </span>
@@ -372,7 +372,7 @@ function Home() {
         </article>
         <article id="contactsartigo" ref={sectionsRef.Contact}>
           <h1 className="titulos">
-            <span>#</span>contacts{" "}
+            <span>#</span>Contate-me{" "}
             <span>
               <img src={menoslinha} alt="menos" />
             </span>
@@ -380,7 +380,7 @@ function Home() {
           <div id="Contatos">
             <div id="falecomigo">
               <p>
-                Estou aberto a novas oportunidades como programador, sejam
+                Estou aberto a novas oportunidades como programador ou analista de dados,sejam
                 projetos pontuais ou posições efetivas.
               </p>
               <p>
