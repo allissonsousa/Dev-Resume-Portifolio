@@ -27,6 +27,9 @@ import ptstudo from "/src/assets/pythonstudies.png";
 
 import iconmenu from "/src/assets/menudireita.png";
 
+//CRIAÇÃO DA INTERAÇÃO COM CHATBOT IA
+cd chatbot npm start
+
 // Componente de carregamento, tela toda, frase e imagem
 function Menupequeno() {
   const home = useState(false);
