@@ -1,54 +1,61 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-
 function Chatbot() {
-  const [mensagens, setMessages] = useState([]);
+  const [mensagens, setMensagens] = useState([]);
   const [input, setInput] = useState("");
 
   const handleInputChange = (e) => {
-    setInput(e.alvo.valor);
+    setInput(e.target.value);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (input.trim() === '') return;
 
     // Adicionar mensagem do usuario ao array de mensagens
-    setMessages ([...mensagens, {function : 'usuário', texto : input}]);
+    setMensagens([...mensagens, { role: 'user', text: input }]);
 
     try {
-        //envia mensagem do usuário para a API do chat gpt
-        const resposta = await axios.post (
-            'https://api.openai.com/v1/engines/davinci-codex/completions',
-            {
-                promt : `Usuário: ${input}\nChatGPT` ,
-                max_tokens : 100,
-            },
-            {
-                headers: {
-                    'Tipo de conteúdo' : 'aplications/json',
-                    'Autorização' : 'Portador API_KEY'
-                },
-            }
-        );
+      // envia mensagem do usuário para a API do chat gpt
+      const resposta = await axios.post(
+        'https://api.openai.com/v1/engines/davinci-codex/completions',
+        {
+          prompt: `Usuário: ${input}\nChatGPT`,
+          max_tokens: 100,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer API_KEY'
+          },
+        }
+      );
 
-        //
-        const botResponse = resposta.dados.escolhas [0].text;
+      // Extraia a resposta do bot da resposta da API
+      const botResponse = resposta.data.choices[0].text;
 
-        //adicione a mensagem do bot ao array de mensagens
+      // adicione a mensagem do bot ao array de mensagens
+      setMensagens(prevMensagens => [
+        ...prevMensagens,
+        { role: 'bot', text: botResponse }
+      ]);
+
+      // limpa o campo de entrada
+      setInput('');
+    }
+    catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
     }
   };
-  
-  //Extraia a resposta do bot da resposta da API 
 
   return (
     <div className="chatbot">
       <div className="caixa-de-batepapo">
         <div className="mensagens">
-          {mensagens.map((mensages, indice) => (
+          {mensagens.map((mensagem, index) => (
             <div key={index} className="mensagem">
-              {mensagens.fuction === "bot" ? (
-                <div className="bot-message"> {mensagem.text} </div>
+              {mensagem.role === "bot" ? (
+                <div className="bot-message">{mensagem.text}</div>
               ) : (
                 <div className="user-message">{mensagem.text}</div>
               )}
@@ -56,12 +63,12 @@ function Chatbot() {
           ))}
         </div>
         <input
-          tipo="texto"
-          valor={input}
+          type="text"
+          value={input}
           onChange={handleInputChange}
           placeholder="Pergunte a AI..."
         />
-        <button onClick={handleSendMessage}> Enviar </button>
+        <button onClick={handleSendMessage}>Enviar</button>
       </div>
     </div>
   );
@@ -70,3 +77,5 @@ function Chatbot() {
 export default Chatbot;
 
 //usar o npm install axios
+//Estilizar depois no css
+

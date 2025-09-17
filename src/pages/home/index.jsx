@@ -28,60 +28,15 @@ import ptstudo from "/src/assets/pythonstudies.png";
 import iconmenu from "/src/assets/menudireita.png";
 
 //CRIAÇÃO DA INTERAÇÃO COM CHATBOT IA
-cd chatbot npm start
 
+
+
+
+
+
+//remover esse menu pequeno e estilizar o outro para ficarem iguais
 // Componente de carregamento, tela toda, frase e imagem
-function Menupequeno() {
-  const home = useState(false);
-  const sectionsRef = {
-    Home: useRef(null),
-    Projects: useRef(null),
-    About: useRef(null),
-    Contact: useRef(null),
-    Skills: useRef(null),
-  };
-  const scrollToSection = (section) => {
-    sectionsRef[section]?.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
-
-  useEffect(() => {
-    const aside = document.getElementById("navegacaolateral");
-    if (aside) {
-      aside.style.display = menuOpen ? "flex" : "none";
-    }
-  }, [menuOpen]);
-
-  return (
-    <>
-      <aside id="navegacaolateral" className="somepequeno">
-        <div onClick={() => scrollToSection("Home")}>
-          <span>#</span>Home
-        </div>
-        <div onClick={() => scrollToSection("Projects")}>
-          <span>#</span>Trabalhos
-        </div>
-        <div onClick={() => scrollToSection("Skills")}>
-          <span>#</span>Habilidades
-        </div>
-        <div onClick={() => scrollToSection("About")}>
-          <span>#</span>Sobre mim
-        </div>
-        <div onClick={() => scrollToSection("Contact")}>
-          <span>#</span>Contate-me
-        </div>
-      </aside>
-      <nav id="menuclick" className="somepequeno">
-        <img src={iconmenu} alt="menuicone" onClick={toggleMenu} />
-      </nav>
-    </>
-  );
-}
 function CarregandoPagina() {
   return (
     <div className="carregando somecarregamento">
