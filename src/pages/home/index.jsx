@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./stylePC.css";
-import "./styleTAB.css";
 import "./styleCELL.css";
 import { useRef } from "react";
 import { animationControls, motion, useAnimation } from "framer-motion";
@@ -27,14 +26,6 @@ import ptstudo from "/src/assets/pythonstudies.png";
 
 import iconmenu from "/src/assets/menudireita.png";
 
-//CRIAÇÃO DA INTERAÇÃO COM CHATBOT IA
-
-
-
-
-
-
-//remover esse menu pequeno e estilizar o outro para ficarem iguais
 // Componente de carregamento, tela toda, frase e imagem
 
 function CarregandoPagina() {
@@ -211,7 +202,6 @@ function Home() {
   return (
     <div id="corpo">
       <CarregandoPagina />
-      <Menupequeno />
       <header id="cabeçalho">
         <div id="allissonsimbolo">
           <img src={selecao} alt="simbolo" />
@@ -219,19 +209,19 @@ function Home() {
         </div>
         <div id="navegacao">
           <div onClick={() => scrollToSection("Home")}>
-            <span>#</span>Home
+            <span>#</span>home
           </div>
           <div onClick={() => scrollToSection("Projects")}>
-            <span>#</span>Trabalhos
+            <span>#</span>trabalhos
           </div>
           <div onClick={() => scrollToSection("Skills")}>
-            <span>#</span>Habilidades
+            <span>#</span>skills
           </div>
           <div onClick={() => scrollToSection("About")}>
             <span>#</span>sobre
           </div>
           <div onClick={() => scrollToSection("Contact")}>
-            <span>#</span>Contate-me
+            <span>#</span>contate-me
           </div>
         </div>
       </header>
@@ -285,17 +275,17 @@ function Home() {
         </article>
         <article>
           <h1 className="titulos">
-            <span>#</span>Projetos{" "}
+            <span>#</span>projects{" "}
             <span>
               <img src={menoslinha} alt="menos" />
             </span>
           </h1>
-          <Exibeprojeto />
+          <Exibeprojeto id="projects" />
           <div ref={sectionsRef.Skills}></div>
         </article>
         <article id="titles">
           <h1 className="titulos">
-            <span>#</span>Habilidades{" "}
+            <span>#</span>skills{" "}
             <span>
               <img src={menoslinha} alt="menos" />
             </span>
@@ -305,7 +295,7 @@ function Home() {
         <article ref={sectionsRef.About} className="sobre">
           <div>
             <h1 className="titulos">
-              <span>#</span>Sobre mim{" "}
+              <span>#</span>about-me{" "}
               <span>
                 <img src={menoslinha} alt="menos" />
               </span>
@@ -330,7 +320,7 @@ function Home() {
         </article>
         <article id="contactsartigo" ref={sectionsRef.Contact}>
           <h1 className="titulos">
-            <span>#</span>Contate-me{" "}
+            <span>#</span>contacts{" "}
             <span>
               <img src={menoslinha} alt="menos" />
             </span>
@@ -338,7 +328,7 @@ function Home() {
           <div id="Contatos">
             <div id="falecomigo">
               <p>
-                Estou aberto a novas oportunidades como programador ou analista de dados,sejam
+                Estou aberto a novas oportunidades como programador, sejam
                 projetos pontuais ou posições efetivas.
               </p>
               <p>

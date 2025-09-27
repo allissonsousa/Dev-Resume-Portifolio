@@ -128,12 +128,6 @@ span {
     border-right: 0.2em solid var(---cor4);
   }
 }
-#menupequeno {
-  display: none;
-}
-#menucompacto {
-  display: none;
-}
 header {
   backdrop-filter: blur(10px);
   display: flex;
