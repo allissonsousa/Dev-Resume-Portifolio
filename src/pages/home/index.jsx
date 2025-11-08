@@ -23,8 +23,8 @@ import linha from "/src/assets/linha.png";
 import aspas from "/src/assets/aspas.png";
 import carregando from "/src/assets/carregando.png";
 import ptstudo from "/src/assets/pythonstudies.png";
-
 import iconmenu from "/src/assets/menudireita.png";
+import { div } from "framer-motion/client";
 
 // Componente de carregamento, tela toda, frase e imagem
 
@@ -35,6 +35,31 @@ function CarregandoPagina() {
         <img src={carregando} alt="loading" />
         <h1 id="frasecarregamento">Transformando sonhos em códigos</h1>
       </article>
+    </div>
+  );
+}
+
+function Sendemail() {
+  return (
+    <div id="Sendemail">
+      <form
+        action="https://formsubmit.co/allissonsousa7@outlook.com"
+        method="POST"
+      >
+        <input type="text" name="name" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu email" required />
+        <textarea
+          cols={30}
+          rows={10}
+          name="message"
+          placeholder="Digite a sua mensagem"
+          required
+        ></textarea>
+        <button type="submit">Send</button>
+        <input type="hidden" name="subject" value="Novo contato!" />
+        <input type="text" name="honey" style={{ display: "none" }} />
+        <input type="hidden" name="_captcha" value="false" />
+      </form>
     </div>
   );
 }
@@ -357,6 +382,7 @@ function Home() {
           </div>
         </article>
       </div>
+      <Sendemail />
       <Rodape />
     </div>
   );

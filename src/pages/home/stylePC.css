@@ -50,6 +50,9 @@ span {
   padding: 0;
 }
 
+body {
+  background-color: var(---cor1);
+}
 .carregando {
   width: 100vw;
   height: 100vh;
@@ -210,6 +213,10 @@ header {
   justify-content: space-around;
   height: 150px;
   transform: translateY(100px);
+
+  & h1 {
+    font-size: 20pt;
+  }
 }
 
 #efeito {
@@ -465,6 +472,48 @@ a {
     width: 200px;
     border: 1px solid white;
     padding: 10px;
+  }
+}
+
+#Sendemail {
+  display: flex;
+  & form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(---cor1);
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px 0px 10px 0px;
+    margin: 20px;
+    border: 1px solid var(---cor4);
+  }
+  & input,
+  textarea {
+    color: white;
+    font-weight: bolder;
+    height: 30px;
+    border: 1px solid var(---cor5);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(---cor2);
+  }
+  & button {
+    width: 60px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(---cor1);
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    align-self: center;
+    border: 1px solid var(---cor4);
+
+    &:hover {
+      background-color: var(---cor4);
+      color: var(---cor1);
+    }
   }
 }
 
