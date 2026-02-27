@@ -5,6 +5,7 @@
   padding: 0px;
   margin: 0px;
 }
+
 :root {
   ---cor1: rgb(48, 43, 43);
   ---cor2: rgb(48, 43, 43);
@@ -53,6 +54,7 @@ span {
 body {
   background-color: var(---cor1);
 }
+
 .carregando {
   width: 100vw;
   height: 100vh;
@@ -81,30 +83,37 @@ body {
     flex-direction: column;
   }
 }
+
 @keyframes giracarregamento {
   from {
     transform: none;
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .somecarregamento {
   animation: somecarregar 1s ease-in-out forwards;
   animation-delay: 4s;
 }
+
 @keyframes somecarregar {
   from {
     display: flex;
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
+
   to {
     display: none;
   }
 }
+
 #frasecarregamento {
   margin-bottom: 40px;
   width: 300px;
@@ -118,6 +127,7 @@ body {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -127,10 +137,12 @@ body {
   from {
     border-right: 0.2em solid var(---cor1);
   }
+
   to {
     border-right: 0.2em solid var(---cor4);
   }
 }
+
 header {
   backdrop-filter: blur(10px);
   display: flex;
@@ -156,10 +168,12 @@ header {
     width: 20px;
   }
 }
+
 .somepequeno {
   display: none;
 }
-#navegacao > div:hover {
+
+#navegacao>div:hover {
   cursor: pointer;
   font-weight: bold;
 }
@@ -172,12 +186,12 @@ header {
   z-index: 2;
   left: 40px;
 
-  & a > img {
+  & a>img {
     width: 20px;
     margin: 4px;
   }
 
-  & a > img:hover {
+  & a>img:hover {
     transform: scale(1.2);
   }
 }
@@ -260,10 +274,12 @@ header {
   animation: pulsa 2s ease-in-out forwards;
   animation-delay: 4s;
 }
+
 @keyframes pulsa {
   from {
     scale: 1;
   }
+
   to {
     scale: 1.2;
   }
@@ -287,10 +303,12 @@ header {
   from {
     transform: translateY(-140px) rotate(180deg);
   }
+
   to {
     transform: translateY(-141px) rotate(360deg);
   }
 }
+
 .slogan {
   display: flex;
   flex-direction: column;
@@ -345,10 +363,11 @@ header {
 .projeto {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 230px;
   border: 1px solid rgba(255, 255, 255, 0.438);
   margin: 40px 10px 100px 10px;
-  background-color: var(--cor1); /* <-- cuidado: era ---cor1 */
+  background-color: var(--cor1);
+  /* <-- cuidado: era ---cor1 */
   transition-duration: 0.4s;
   opacity: 0;
   transform: translateY(60px);
@@ -356,7 +375,9 @@ header {
 }
 
 .projeto img {
-  width: 247px;
+  width: auto;
+  height: 180px;
+  object-fit: cover;
 }
 
 .projeto div {
@@ -385,6 +406,7 @@ a {
 .projeto a:hover {
   color: var(---cor1);
 }
+
 .projeto:hover {
   scale: 1.15;
   transition-duration: 0.6s;
@@ -427,6 +449,7 @@ a {
   background-color: var(---cor4);
   color: var(---cor2);
 }
+
 .cast {
   display: flex;
 }
@@ -477,6 +500,7 @@ a {
 
 #Sendemail {
   display: flex;
+
   & form {
     width: 500px;
     display: flex;
@@ -488,6 +512,7 @@ a {
     margin: 20px;
     border: 1px solid var(---cor4);
   }
+
   & input,
   textarea {
     color: white;
@@ -498,6 +523,7 @@ a {
     padding: 5px;
     background-color: var(---cor2);
   }
+
   & button {
     width: 60px;
     height: 40px;

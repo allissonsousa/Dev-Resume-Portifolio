@@ -24,6 +24,7 @@ import aspas from "/src/assets/aspas.png";
 import carregando from "/src/assets/carregando.png";
 import ptstudo from "/src/assets/pythonstudies.png";
 import iconmenu from "/src/assets/menudireita.png";
+import capricho from "/src/assets/capricho.jpeg";
 import { div } from "framer-motion/client";
 
 // Componente de carregamento, tela toda, frase e imagem
@@ -67,7 +68,7 @@ function Sendemail() {
 //Exibição dos projetos ao rolar a tela até eles
 function Exibeprojeto() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3 });
+  const [ref, inView] = useInView({ threshold: 0.2 });
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -79,6 +80,14 @@ function Exibeprojeto() {
   const projetos = [
     {
       id: 1,
+      imagem: capricho,
+      nome: "E-commerce real",
+      content: "Site de exibição e admin painel com php",
+      tags: "PHP MySQL Bootstrap Hostinger",
+      linque: "https://caprichodamoda.store/index.php",
+    },
+    {
+      id: 2,
       imagem: analisedados,
       nome: "Saúde Quest",
       content: "Análise de dados públicos com python ",
@@ -86,7 +95,7 @@ function Exibeprojeto() {
       linque: "https://github.com/allissonsousa/Health-Data-Py",
     },
     {
-      id: 2,
+      id: 3,
       imagem: dadosfinanceiros,
       nome: "Finance View",
       content: "Acompanhador de valores da bolsa atual com Cruds em Java",
@@ -94,7 +103,7 @@ function Exibeprojeto() {
       linque: "https://github.com/allissonsousa/Finance-Base-Java",
     },
     {
-      id: 3,
+      id: 4,
       imagem: speed,
       nome: "Speed Timer",
       content: "Cronometro para cubo mágico com métricas ",
@@ -103,7 +112,7 @@ function Exibeprojeto() {
         "https://allissonsousa.github.io/SpeedCubee-Timer/pages/home.html",
     },
     {
-      id: 4,
+      id: 5,
       imagem: ptstudo,
       nome: "Python Study",
       content: "Estudos e testes realizados com python",
@@ -124,7 +133,7 @@ function Exibeprojeto() {
               y: 0,
               transition: { duration: 0.5, delay: i * 0.2 },
             }, // só ativa a classe
-            hidden: { opacity: 0, y: 100 },
+            hidden: { opacity: 0, y: 20 },
           }}
         >
           <img src={projeto.imagem} alt="Foto do Projeto" />
@@ -154,20 +163,20 @@ function Habilidades() {
   const habilidades = [
     {
       id: 3,
-      habilitty: "Ferramentas",
+      habilitty: "FERRAMENTAS",
       tecnologia: "VSCode  Figma  Git  Excel  PowerBI  Pycharm  InteliJ",
     },
     {
       id: 1,
-      habilitty: "Linguagens",
+      habilitty: "LINGUAGENS",
       tecnologia: "Python  React  Java  JavaScript ",
     },
     {
       id: 2,
-      habilitty: "DataBases",
+      habilitty: "DATABASES",
       tecnologia: "SQL Server  MySQL  MongoBD",
     },
-    { id: 4, habilitty: "Outros", tecnologia: "HTML  CSS  ADM" },
+    { id: 4, habilitty: "OUTROS", tecnologia: "HTML  CSS  ADM" },
   ];
   return (
     <div ref={ref} className="habilidades">
@@ -200,12 +209,7 @@ function Rodape() {
   return (
     <footer>
       <aside>
-        <div id="AskAI">
-          <p>Ask AI</p>
-          <input type="text" />
-        </div>
-        <div id="AiResponse"></div>
-        <p>© 2025 All rights by Allisson Sousa</p>
+        <a href="https://www.instagram.com/aspixelweb?igsh=MTJxMnZheGY1aThtbw==">© 2025 Aspiexel Web Technology. Todos os direitos reservados.</a>
       </aside>
     </footer>
   );
@@ -281,7 +285,8 @@ function Home() {
             <img id="simbolofoto" src={simbol} alt="simbolo" />
             <img id="foto" src={perfil} alt="perfil" />
             <p id="workingon">
-              <span>#</span>Atualmente -- estudando JAVA
+              <span>#</span>Atualmente -- estudando PHP <br />
+              Fundador e desenvolvedor na Aspixel Web Technology <br />
             </p>
             <img id="pontofoto" src={malha} alt="pontos" />
           </article>
@@ -296,9 +301,11 @@ function Home() {
             <p>— Carl Sagan</p>
           </div>
           <img src={aspas} alt="aspas" />
-          <div ref={sectionsRef.Projects} height="100px"></div>
+          <div ref={sectionsRef.Projects}></div>
         </article>
-        <article>
+
+        <article className="abaprojetos" >
+
           <h1 className="titulos">
             <span>#</span>projects{" "}
             <span>
@@ -306,6 +313,7 @@ function Home() {
             </span>
           </h1>
           <Exibeprojeto id="projects" />
+
           <div ref={sectionsRef.Skills}></div>
         </article>
         <article id="titles">
