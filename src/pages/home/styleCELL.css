@@ -148,7 +148,13 @@
 
     & #navegacao {
       display: flex;
-      width: 100%;
+      width: 90%;
+
+      span {
+        font-size: 7pt;
+        cursor: pointer;
+        margin-right: 4px;
+      }
     }
   }
 
@@ -194,6 +200,13 @@
   #allissonsimbolo {
     display: block;
     margin-left: 20px;
+    font-size: 5pt;
+
+    img {
+      width: 20px;
+    }
+
+    ;
   }
 
   /*icones fixos na lateral para acessar minhas redes sociais*/
@@ -492,13 +505,14 @@
 
   #titles {
     padding-top: 100px;
+    width: 80%;
   }
 
   .habilidades {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100vw;
+    align-items: center;
     height: 500px;
     padding: 10px;
     font-size: small;
@@ -532,21 +546,36 @@
     font-weight: bolder;
     background-color: var(---cor4);
     color: var(---cor2);
+    font-size: 7pt;
+    font-weight: bold;
   }
 
   .cast {
     display: flex;
+    width: 90vw;
   }
 
   .sobre {
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
+    align-self: center;
+    width: 80vw;
+    margin: 100px 10px 100px 0px;
+    height: min-content;
+
+    div {
+      height: fit-content;
+    }
 
     & p {
-      height: 120px;
+      line-height: 15pt;
+      height: max-content;
       margin: 40px;
-      width: 50vw;
+      width: 80%;
+    }
+
+    img {
+      display: none;
     }
   }
 
@@ -556,8 +585,9 @@
   }
 
   #contactsartigo {
+    width: 80vw;
     padding-top: 100px;
-    height: 500px;
+    height: auto;
   }
 
   #Contatos {
@@ -583,6 +613,10 @@
     }
   }
 
+  #Sendemail {
+    width: 80vw;
+  }
+
   footer {
     justify-content: space-around;
     border-top: 1px solid white;
@@ -593,11 +627,13 @@
     align-items: center;
     color: white;
 
-    & aside {
+    & aside a {
       width: 82vw;
       background-color: var(---cor6);
       height: 198px;
       display: flex;
+      text-decoration: none;
+      color: white;
       justify-content: space-around;
       align-items: center;
     }

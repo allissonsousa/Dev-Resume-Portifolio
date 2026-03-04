@@ -553,11 +553,13 @@ footer {
   align-items: center;
   color: white;
 
-  & aside {
+  & aside a {
     width: 82vw;
     background-color: var(---cor6);
     height: 198px;
     display: flex;
+    color: white;
+    text-decoration: none;
     justify-content: space-around;
     align-items: center;
   }
