@@ -33,5 +33,5 @@ Sou um programador e analista de dados apaixonado por transformar problemas comp
 ## 📫 Todas as formas de entrar em contato comigo e pedir seu orçamento
 
 
-<a href="https://allissonsousa.github.io/Dev-Resume-Portifolio/" target="_blank">Acessar portifólio</a>
+<a href="https://allissonsousa.github.io/Dev-Resume-Portifolio/" target="blank">Acessar portifólio</a>
 <p align="center">Desenvolvido com afinco por Allisson Sousa</p>
